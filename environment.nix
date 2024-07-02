@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-unstable, ... }:
+{ config, walker, impHPkg, lib, pkgs, pkgs-unstable, ... }:
 
 {
   environment.variables = {
@@ -7,6 +7,9 @@
     DEFAULT_BROWSER = "firefox";
     TERMINAL = "kitty";
   };
+
+  home-manager.sharedModules = [ walker.homeManagerModules.walker impHPkg ];
+
 
   #environment.etc."current-system-packages".text =
 
@@ -22,6 +25,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
+    pkgs.packages."x86_64-linux".default
     pkgs.parallel
     pkgs.dnglab
     pkgs-unstable.darktable

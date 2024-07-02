@@ -12,7 +12,7 @@
     piss.url = "git+file:./chumbawumba";
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, impermanence, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, walker, impermanence, home-manager, ... }: {
     nixosConfigurations = {
       wumbo = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -21,6 +21,8 @@
         specialArgs = {
           inherit inputs;
           inherit system;
+          inherit walker;
+          impHPkg = impermanence.nixosModules.home-manager.impermanence;
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;
