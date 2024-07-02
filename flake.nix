@@ -32,7 +32,15 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.gromit = import ./home.nix;
+            home-manager.users.gromit = ({...}:{
+              imports = [
+                ./home-manager/home.nix
+                ./home-manager/hypr.nix
+                ./home-manager/walker.nix
+                ./home-manager/waybar.nix
+              ];
+            });
+            # import ./home.nix;
           }
           (import ./overlays.nix)
         ];

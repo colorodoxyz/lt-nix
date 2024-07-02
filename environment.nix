@@ -22,6 +22,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
+    pkgs.parallel
     pkgs.dnglab
     pkgs-unstable.darktable
     pkgs.ranger
