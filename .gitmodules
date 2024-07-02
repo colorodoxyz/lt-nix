@@ -1,0 +1,3 @@
+[submodule "chumbawumba"]
+	path = chumbawumba
+	url = ./chumbawumba

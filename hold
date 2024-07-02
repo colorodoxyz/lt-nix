@@ -1,0 +1,7 @@
+
+  nixosConfigurations."nixos" = let pkgs = (nixpkgs.legacyPackages.${self.system}.extend (
+    final: prev: {
+      xz = nixpkgs-stable.legacyPackages.${self.system}.xz;
+    }
+  )); in nixpkgs.lib.nixosSystem {
+}
