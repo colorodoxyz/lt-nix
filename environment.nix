@@ -25,7 +25,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = [
-    pkgs.packages."x86_64-linux".default
+    walker.packages."x86_64-linux".default
+    pkgs.bemenu
+    pkgs.gtk3
+    pkgs.vulkan-tools
+    pkgs.mako
+    pkgs.swaybg
     pkgs.parallel
     pkgs.dnglab
     pkgs-unstable.darktable

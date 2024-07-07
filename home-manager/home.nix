@@ -19,8 +19,8 @@
 
     kitty = {
 	enable = true;
-	theme = "Argonaut";
-	extraConfig = (builtins.readFile ./kitty.conf);
+	#theme = "Argonaut";
+	#extraConfig = (builtins.readFile ./kitty.conf);
 	#background_image = "/home/colorodo/th-1524566410.jpg";
     };
 
@@ -55,6 +55,12 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
+  services.mako = {
+      enable = true;
+      defaultTimeout = 5000;
+  };
+
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.05";
+  home.stateVersion = "24.05";
 }

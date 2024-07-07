@@ -5,7 +5,8 @@
         settings = let
             mainMod = "SUPER";
         in {
-            "$menu" = "wofi --show drun";
+            "$menu" = "wofi --show dmenu";
+            monitor = ",highres,auto,1";
             xwayland = {
                 force_zero_scaling = true;
             };
@@ -20,28 +21,28 @@
                 "waybar"
                 #messaging stuff
                 "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"
-                "google-chrome-stable --app=https://messenger.com/"
-                "google-chrome-stable --app=https://web.whatsapp.com/"
+                #"google-chrome-stable --app=https://messenger.com/"
+                #"google-chrome-stable --app=https://web.whatsapp.com/"
                 #spotify
-                "kitty --class spotify spotify_player"
+                #"kitty --class spotify spotify_player"
             ];
 
             "windowrulev2" = [
                 # "suppressevent maximize, class:.*"
                 "workspace special:Signal silent,class:^(signal)$"
                 "workspace special:Signal silent,class:^(Signal)$"
-                "workspace special:Messenger silent,class:^(chrome[-]messenger[.]com[_][_][-]Default)$"
-                "workspace special:Messenger silent,initialTitle:messenger[.]com.*"
-                "workspace special:Whatsapp silent,class:^(chrome[-]web[.]whatsapp[.]com[_][_][-]Default)$"
-                "workspace special:Whatsapp silent,initialTitle:web[.]whatsapp[.]com.*"
-                "workspace special:Spotify silent,class:^(spotify)$"
+                #"workspace special:Messenger silent,class:^(chrome[-]messenger[.]com[_][_][-]Default)$"
+                #"workspace special:Messenger silent,initialTitle:messenger[.]com.*"
+                #"workspace special:Whatsapp silent,class:^(chrome[-]web[.]whatsapp[.]com[_][_][-]Default)$"
+                #"workspace special:Whatsapp silent,initialTitle:web[.]whatsapp[.]com.*"
+                #"workspace special:Spotify silent,class:^(spotify)$"
             ];
 
             general = {
-                gaps_in = 5;
-                gaps_out = 20;
+                gaps_in = 0;
+                gaps_out = 0;
 
-                border_size = 2;
+                border_size = 1;
 
                 # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
                 "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
@@ -143,19 +144,19 @@
                 "${mainMod}, V, togglefloating,"
                 "${mainMod}, R, exec, $menu"
                 "${mainMod}, P, pseudo, # dwindle"
-                "${mainMod}, J, togglesplit, # dwindle"
-                "${mainMod}, B, exec, google-chrome-stable # dwindle"
+                #"${mainMod}, J, togglesplit, # dwindle"
+                "${mainMod}, B, exec, firefox # dwindle"
                 "${mainMod}, D, exec, code --enable-features=UseOzonePlatform --ozone-platform=x11"
-                "${mainMod}, left, movefocus, l"
-                "${mainMod}, right, movefocus, r"
-                "${mainMod}, up, movefocus, u"
-                "${mainMod}, down, movefocus, d"
-                "${mainMod}, mouse_down, workspace, e+1"
-                "${mainMod}, mouse_up, workspace, e-1"
+                "${mainMod}, H, movefocus, l"
+                "${mainMod}, L, movefocus, r"
+                "${mainMod}, K, movefocus, u"
+                "${mainMod}, J, movefocus, d"
+                #"${mainMod}, mouse_down, workspace, e+1"
+                #"${mainMod}, mouse_up, workspace, e-1"
                 "${mainMod} SHIFT, Q, togglespecialworkspace, Signal"
-                "${mainMod} SHIFT, A, togglespecialworkspace, Messenger"
-                "${mainMod} SHIFT, W, togglespecialworkspace, Whatsapp"
-                "${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
+                #"${mainMod} SHIFT, A, togglespecialworkspace, Messenger"
+                #"${mainMod} SHIFT, W, togglespecialworkspace, Whatsapp"
+                #"${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
             ] ++ (
                 # workspaces
                 # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
