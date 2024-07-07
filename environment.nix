@@ -26,7 +26,7 @@
   # $ nix search wget
   environment.systemPackages = [
     walker.packages."x86_64-linux".default
-    pkgs.bemenu
+    pkgs.wofi
     pkgs.gtk3
     pkgs.vulkan-tools
     pkgs.mako

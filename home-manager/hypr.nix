@@ -5,7 +5,7 @@
         settings = let
             mainMod = "SUPER";
         in {
-            "$menu" = "wofi --show dmenu";
+            "$menu" = "wofi --show drun";
             monitor = ",highres,auto,1";
             xwayland = {
                 force_zero_scaling = true;
