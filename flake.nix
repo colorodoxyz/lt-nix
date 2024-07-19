@@ -6,13 +6,11 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    walker.url = "github:abenz1267/walker";
-    walker.inputs.nixpkgs.follows = "nixpkgs";
     impermanence.url = "github:nix-community/impermanence";
     piss.url = "git+file:./chumbawumba";
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, walker, impermanence, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, impermanence, home-manager, ... }: {
     nixosConfigurations = {
       wumbo = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -21,7 +19,6 @@
         specialArgs = {
           inherit inputs;
           inherit system;
-          inherit walker;
           impHPkg = impermanence.nixosModules.home-manager.impermanence;
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
@@ -40,7 +37,6 @@
               imports = [
                 ./home-manager/home.nix
                 ./home-manager/hypr.nix
-                ./home-manager/walker.nix
                 ./home-manager/waybar.nix
               ];
             });

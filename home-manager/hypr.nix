@@ -21,8 +21,6 @@
                 "waybar"
                 #messaging stuff
                 "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"
-                #"google-chrome-stable --app=https://messenger.com/"
-                #"google-chrome-stable --app=https://web.whatsapp.com/"
                 #spotify
                 #"kitty --class spotify spotify_player"
             ];

@@ -28,8 +28,13 @@
     auto-optimise-store = true;
   };
 
-  networking.hostName = "wumbo";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "wumbo";
+    wireless = {
+      enable = true;
+      networks = inputs.piss.networks;
+    };
+  };
 
   time.timeZone = "America/Los_Angeles";
   time.hardwareClockInLocalTime = true;
@@ -74,7 +79,7 @@
   systemd.services.restart-nm = {
     wantedBy = ["suspend.target"];
     partOf = ["suspend.target"];
-    script = "${pkgs.systemd}/bin/systemctl start NetworkManager";
+    #script = "${pkgs.systemd}/bin/systemctl start NetworkManager";
   };
 
   programs.hyprland.enable = true;
