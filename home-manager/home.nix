@@ -9,7 +9,7 @@
       ripgrep
     ];
     file.".ssh/allowed_signers".text = ''
-    ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYOC0HTedqrgULQ7WOhqwQ7OCapQk+q4ZLOE4knjSkW spencer.liu.liu@gmail.com
+    spencer.liu.liu@gmail.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYOC0HTedqrgULQ7WOhqwQ7OCapQk+q4ZLOE4knjSkW
     '';
   };
 
