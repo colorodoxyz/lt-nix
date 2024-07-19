@@ -24,14 +24,17 @@
     };
 
     git = {
-	enable = true;
-	lfs.enable = true;
-	userName = "Spencer Liu";
-	userEmail = "spencer.liu.liu@gmail.com";
-	extraConfig = {
-	    #url."git@github.com:".insteadOf = "https://github.com/";
-	    #url."git@gogs.tail43567.ts.net".insteadOf = "http://gogs.tail43567.ts.net";
-	};
+      enable = true;
+      lfs.enable = true;
+      userName = "Spencer Liu";
+      userEmail = "spencer.liu.liu@gmail.com";
+      extraConfig = {
+        #url."git@github.com:".insteadOf = "https://github.com/";
+        #url."git@gogs.tail43567.ts.net".insteadOf = "http://gogs.tail43567.ts.net";
+        gpg.format = "ssh";
+        user.signingkey = "/home/gromit/.ssh/gh_sign.pub";
+        commit.gpgSign = true;
+      };
     };
 
     fzf.enable = true; # enables zsh integration by default

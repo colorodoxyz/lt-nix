@@ -60,7 +60,7 @@
     enable = true;
     shellAliases = {
       gs="git status";
-      gc="git commit";
+      gc="git commit -S";
       gd="git diff";
       gb="git branch";
       gl="git pull";
@@ -70,6 +70,7 @@
       gcheck="git checkout";
       la="ls -lhA";
       nxrb="sudo nixos-rebuild switch --flake /nix/persist/bonsai#wumbo";
+      snu="sudo nix flake update";
       tailup="sudo tailscale up --accept-routes";
     };
   };
