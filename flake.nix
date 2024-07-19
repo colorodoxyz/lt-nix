@@ -4,13 +4,18 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    zig.url = "github:mitchellh/zig-overlay";
+
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     impermanence.url = "github:nix-community/impermanence";
+
     piss.url = "git+file:./chumbawumba";
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, impermanence, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, zig, impermanence, home-manager, ... }: {
     nixosConfigurations = {
       wumbo = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -19,7 +24,8 @@
         specialArgs = {
           inherit inputs;
           inherit system;
-          impHPkg = impermanence.nixosModules.home-manager.impermanence;
+          inherit zig;
+          #impHPkg = impermanence.nixosModules.home-manager.impermanence;
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;

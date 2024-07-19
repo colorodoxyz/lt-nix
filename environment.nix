@@ -1,4 +1,4 @@
-{ config, impHPkg, lib, pkgs, pkgs-unstable, ... }:
+{ config, impHPkg, lib, zig, pkgs, pkgs-unstable, ... }:
 
 {
   environment.variables = {
@@ -29,7 +29,7 @@
     pkgs.waybar
     pkgs.swayidle
 
-    (pkgs.callPackage ./zigPkg.nix {})
+    zig.packages."x86_64-linux".master
 
     pkgs.wofi
     pkgs.gtk3
