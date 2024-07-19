@@ -31,8 +31,6 @@
 
         ".cache/spotify"
 
-        ".config/jaundiceSim"
-
         ".mozilla"
 
         ".ssh"
