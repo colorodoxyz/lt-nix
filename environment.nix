@@ -29,6 +29,8 @@
     pkgs.waybar
     pkgs.swayidle
 
+    (pkgs.callPackage ./zigPkg.nix {})
+
     pkgs.wofi
     pkgs.gtk3
     pkgs.vulkan-tools

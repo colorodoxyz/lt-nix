@@ -9,7 +9,6 @@
     xclip
     tree
     ripgrep
-    zig
   ];
 
   programs = {
