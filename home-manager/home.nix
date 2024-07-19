@@ -8,7 +8,7 @@
       tree
       ripgrep
     ];
-    file.".ssh/allowed_signers".text = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFOZCgPFNmK4NWUytpkYyNj+G/B+FbtKAnwQq8TLNXMd gromit@wumbo";
+    file.".ssh/allowed_signers".text = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYOC0HTedqrgULQ7WOhqwQ7OCapQk+q4ZLOE4knjSkW spencer.liu.liu@gmail.com";
   };
 
   programs = {
