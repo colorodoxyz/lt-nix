@@ -33,7 +33,7 @@
         #url."git@gogs.tail43567.ts.net".insteadOf = "http://gogs.tail43567.ts.net";
         gpg.format = "ssh";
         user.signingkey = "/home/gromit/.ssh/gh_sign.pub";
-        commit.gpgSign = true;
+        commit.gpgsign = true;
       };
     };
 
