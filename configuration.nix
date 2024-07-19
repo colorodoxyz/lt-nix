@@ -71,16 +71,13 @@
 
   # Enables copy / paste when running in a KVM with spice.
   services.spice-vdagentd.enable = true;
+  systemd.services.restart-nm = {
+    wantedBy = ["suspend.target"];
+    partOf = ["suspend.target"];
+    script = "${pkgs.systemd}/bin/systemctl start NetworkManager";
+  };
 
   programs.hyprland.enable = true;
-
-  /*
-  services.xserver = {
-    enable = true;
-    desktopManager.plasma5.enable = true;
-    displayManager.sddm.enable = true;
-  };
-  */
 
   fonts.packages = with pkgs; [
     fira-mono

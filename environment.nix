@@ -26,11 +26,15 @@
   # $ nix search wget
   environment.systemPackages = [
     walker.packages."x86_64-linux".default
+    pkgs.xwayland
+    pkgs.swaybg
+    pkgs.waybar
+    pkgs.swayidle
+
     pkgs.wofi
     pkgs.gtk3
     pkgs.vulkan-tools
     pkgs.mako
-    pkgs.swaybg
     pkgs.parallel
     pkgs.dnglab
     pkgs-unstable.darktable
