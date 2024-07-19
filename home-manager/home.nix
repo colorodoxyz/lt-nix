@@ -2,14 +2,16 @@
   home = {
     username = "gromit";
     homeDirectory = "/home/gromit";
+    packages = with pkgs; [
+      nurl
+      xclip
+      tree
+      ripgrep
+    ];
+    file.".ssh/allowed_signers".text = "ssh-ed25519
+    AAAAC3NzaC1lZDI1NTE5AAAAIFOZCgPFNmK4NWUytpkYyNj+G/B+FbtKAnwQq8TLNXMd
+    gromit@wumbo";
   };
-
-  home.packages = with pkgs; [
-    nurl
-    xclip
-    tree
-    ripgrep
-  ];
 
   programs = {
     home-manager.enable = true;
