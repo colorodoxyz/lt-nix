@@ -33,7 +33,10 @@
       extraConfig = {
         #url."git@github.com:".insteadOf = "https://github.com/";
         #url."git@gogs.tail43567.ts.net".insteadOf = "http://gogs.tail43567.ts.net";
-        gpg.format = "ssh";
+        gpg = {
+          format = "ssh";
+          ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+        };
         user.signingkey = "/home/gromit/.ssh/gh_sign.pub";
         commit.gpgsign = true;
       };
