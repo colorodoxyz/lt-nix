@@ -29,6 +29,8 @@
     pkgs.waybar
     pkgs.swayidle
 
+    pkgs.wpa_supplicant_gui
+
     zig.packages."x86_64-linux".master
 
     pkgs.wofi

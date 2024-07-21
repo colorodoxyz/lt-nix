@@ -33,6 +33,7 @@
     wireless = {
       enable = true;
       networks = inputs.piss.networks;
+      userControlled.enable = true;
     };
   };
 
