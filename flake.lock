@@ -120,11 +120,11 @@
     },
     "piss": {
       "locked": {
-        "lastModified": 1721597931,
-        "narHash": "sha256-5NpUF/mx7VPyoCJwO62+3lCgzcW2FpnjrZsB0KCVjug=",
+        "lastModified": 1721598951,
+        "narHash": "sha256-mXf4kVggp6CPalYnhWIHTJ5jHvBWYKp0Vk4tss6tI00=",
         "ref": "refs/heads/master",
-        "rev": "2ea386dfc1b3c400eacbf1c355e779b185c257e2",
-        "revCount": 5,
+        "rev": "e544729bbd606fe269b3ba65ef737ea337e57ee9",
+        "revCount": 6,
         "type": "git",
         "url": "file:./chumbawumba"
       },

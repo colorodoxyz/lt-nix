@@ -29,6 +29,12 @@
   };
 
   networking = {
+    # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+    # (the default) this is the recommended approach. When using systemd-networkd it's
+    # still possible to use this option, but it's recommended to use it in conjunction
+    # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+    # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
+    useDHCP = lib.mkDefault true;
     hostName = "wumbo";
     wireless = {
       enable = true;
@@ -72,6 +78,8 @@
       la="ls -lhA";
       nxrb="sudo nixos-rebuild switch --flake /nix/persist/bonsai#wumbo";
       snu="sudo nix flake update";
+      treetrim="cd /nix/persist/bonsai/";
+      workup="cd /nix/persist/workspace/";
       tailup="sudo tailscale up --accept-routes";
     };
   };
@@ -92,6 +100,11 @@
     inconsolata
     iosevka
   ];
+
+  services.xserver = {
+    enable = true;
+    videoDrivers = [ "amdgpu" ];
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";

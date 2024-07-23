@@ -28,6 +28,7 @@
     pkgs.swaybg
     pkgs.waybar
     pkgs.swayidle
+    pkgs.glxinfo
 
     pkgs.wpa_supplicant_gui
 

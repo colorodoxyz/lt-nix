@@ -18,5 +18,17 @@
         };
       };
     })
+
+    (final: prev: {
+      discord = prev.discord.override {
+        pname = "discord";
+        version = "0.0.60";
+
+        src = prev.fetchurl {
+          url = "https://dl.discordapp.net/apps/linux/0.0.60/discord-0.0.60.tar.gz";
+          hash = "sha256-hu1+/z/ZtHoobjHF+pgNm040r4LQJUTnpZ06RNERFr8=";
+        };
+      };
+    })
   ];
 }
