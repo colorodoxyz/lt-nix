@@ -57,7 +57,7 @@
     gromit = {
 
       initialHashedPassword = inputs.piss.tanjoubi;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "docker" ];
       isNormalUser = true;
       shell = pkgs.zsh;
     };
@@ -85,12 +85,16 @@
   };
 
   # Enables copy / paste when running in a KVM with spice.
-  services.spice-vdagentd.enable = true;
+  services = {
+    spice-vdagentd.enable = true;
+  };
   systemd.services.restart-nm = {
     wantedBy = ["suspend.target"];
     partOf = ["suspend.target"];
     #script = "${pkgs.systemd}/bin/systemctl start NetworkManager";
   };
+
+  virtualisation.docker.enable = true;
 
   programs.hyprland.enable = true;
 

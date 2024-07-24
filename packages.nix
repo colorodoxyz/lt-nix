@@ -1,0 +1,77 @@
+{ zig, pkgs, pkgs-unstable, ... }:
+{
+  environment.systemPackages = [
+    pkgs.xwayland
+    pkgs.swaylock
+    pkgs.swaybg
+    pkgs.waybar
+    pkgs.swayidle
+    pkgs.glxinfo
+
+    pkgs.xbindkeys
+
+    pkgs.wpa_supplicant_gui
+
+    zig.packages."x86_64-linux".master
+
+    pkgs.wofi
+    pkgs.gtk3
+
+
+    pkgs.vulkan-tools
+    pkgs.mako
+
+    pkgs.remarkable-mouse
+    pkgs.parallel
+    pkgs.dnglab
+    pkgs-unstable.darktable
+    pkgs.ranger
+    pkgs.element-desktop
+    pkgs.xournalpp
+    pkgs.s5cmd
+    pkgs.rclone
+    pkgs.tor-browser
+    pkgs.ranger
+    pkgs.keepassxc
+    pkgs.xclip
+    pkgs.gzip
+    pkgs.nodejs
+    pkgs.gotop
+    pkgs.flameshot
+    pkgs.libreoffice
+    pkgs.tmate
+    pkgs.tailscale
+    pkgs.firefox
+    pkgs.spotify
+    pkgs.go_1_21
+    pkgs.rustc
+    pkgs.cargo
+    pkgs.lxappearance
+    pkgs.steam
+    pkgs.gcc
+    pkgs.gdb
+    pkgs.wireguard-tools
+    pkgs.neovim
+    pkgs.os-prober
+    pkgs.wget
+    pkgs.gitFull
+    pkgs.ripgrep
+    pkgs.lsof
+    pkgs.pulseaudioFull
+    pkgs.paprefs
+    pkgs.pavucontrol
+    pkgs.discord
+    pkgs.vlc
+    pkgs.efibootmgr
+    pkgs.gnumake
+    pkgs.qemu
+    pkgs.jq
+    pkgs.qbittorrent
+    pkgs.signal-desktop
+    pkgs.awscli2
+    pkgs.python3
+    pkgs.python311Packages.pip
+    pkgs.poetry
+    pkgs.neofetch
+  ];
+}
