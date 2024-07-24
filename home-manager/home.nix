@@ -13,6 +13,12 @@
     '';
   };
 
+  services.wlsunset = {
+    enable = true;
+    latitude = 37.5;
+    longitude = 121.9;
+  };
+
   programs = {
     home-manager.enable = true;
 
