@@ -179,6 +179,10 @@
                 "${mainMod}, mouse:272, movewindow"
                 "${mainMod}, mouse:273, resizewindow"
             ];
+            binde = [
+                "${mainMod}, XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+                "${mainMod}, XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+            ];
 
         };
     };

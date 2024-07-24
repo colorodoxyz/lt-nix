@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./persist.nix
-    ./environment.nix
+    ./packages.nix
   ];
 
   # This will add each flake input as a registry
@@ -15,13 +15,23 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.etc =
+  environment = {
+    variables = {
+      EDITOR = "nvim";
+      BROWSER = "firefox";
+      DEFAULT_BROWSER = "firefox";
+      TERMINAL = "kitty";
+    };
+    etc =
     lib.mapAttrs'
       (name: value: {
         name = "nix/path/${name}";
         value.source = value.flake;
       })
       config.nix.registry;
+
+
+  };
 
   nix.settings = {
     experimental-features = "nix-command flakes";
