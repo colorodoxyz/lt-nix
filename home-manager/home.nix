@@ -16,7 +16,12 @@
   services.wlsunset = {
     enable = true;
     latitude = 37.5;
-    longitude = 121.9;
+    longitude = -121.9;
+    temperature = {
+      #day = 3500;
+      #night = 3000;
+    };
+    systemdTarget = "hyprland-session.target";
   };
 
   programs = {
