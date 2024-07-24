@@ -21,6 +21,7 @@
                 "waybar"
                 #messaging stuff
                 "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"
+                "discord --enable-features=UseOzonePlatform --ozone-platform=x11"
                 #spotify
                 #"kitty --class spotify spotify_player"
             ];
@@ -29,6 +30,8 @@
                 # "suppressevent maximize, class:.*"
                 "workspace special:Signal silent,class:^(signal)$"
                 "workspace special:Signal silent,class:^(Signal)$"
+                "workspace special:Discord silent,class:^(discord)$"
+                "workspace special:Discord silent,class:^(Discord)$"
                 #"workspace special:Messenger silent,class:^(chrome[-]messenger[.]com[_][_][-]Default)$"
                 #"workspace special:Messenger silent,initialTitle:messenger[.]com.*"
                 #"workspace special:Whatsapp silent,class:^(chrome[-]web[.]whatsapp[.]com[_][_][-]Default)$"
@@ -152,6 +155,7 @@
                 #"${mainMod}, mouse_down, workspace, e+1"
                 #"${mainMod}, mouse_up, workspace, e-1"
                 "${mainMod} SHIFT, Q, togglespecialworkspace, Signal"
+                "${mainMod} SHIFT, D, togglespecialworkspace, Discord"
                 #"${mainMod} SHIFT, A, togglespecialworkspace, Messenger"
                 #"${mainMod} SHIFT, W, togglespecialworkspace, Whatsapp"
                 #"${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
