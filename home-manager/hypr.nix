@@ -117,8 +117,7 @@
 
             # https://wiki.hyprland.org/Configuring/Variables/#input
             input = {
-                kb_layout = "us,gr,ru";
-                kb_options = "grp:caps_toggle";
+                kb_layout = "us";
 
                 follow_mouse = 1;
 
