@@ -75,29 +75,31 @@
     };
   };
 
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      gs="git status";
-      gc="git commit -S";
-      gd="git diff";
-      gb="git branch";
-      gl="git pull";
-      gu="git push";
-      gadd="git add";
-      vim="nvim";
-      gcheck="git checkout";
-      la="ls -lhA";
-      nxrb="sudo nixos-rebuild switch --flake /nix/persist/bonsai#wumbo";
-      snu="sudo nix flake update";
-      treetrim="cd /nix/persist/bonsai/";
-      workup="cd /nix/persist/workspace/";
-      tailup="sudo tailscale up --accept-routes";
+  programs = {
+    zsh = {
+      enable = true;
+      shellAliases = {
+        gs="git status";
+        gc="git commit -S";
+        gd="git diff";
+        gb="git branch";
+        gl="git pull";
+        gu="git push";
+        gadd="git add";
+        vim="nvim";
+        gcheck="git checkout";
+        la="ls -lhA";
+        nxrb="sudo nixos-rebuild switch --flake /nix/persist/bonsai#wumbo";
+        snu="sudo nix flake update";
+        treetrim="cd /nix/persist/bonsai/";
+        workup="cd /nix/persist/workspace/";
+        tailup="sudo tailscale up --accept-routes";
+      };
     };
+    hyprland.enable = true;
   };
 
 
-  programs.light.enable = true;
   # Enables copy / paste when running in a KVM with spice.
   services = {
     spice-vdagentd.enable = true;
@@ -109,8 +111,6 @@
   };
 
   virtualisation.docker.enable = true;
-
-  programs.hyprland.enable = true;
 
   fonts.packages = with pkgs; [
     fira-mono
