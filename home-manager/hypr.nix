@@ -12,18 +12,19 @@
             };
             exec-once = [
                 # regular copy-paste
-                "wl-clipboard-history -t"
-                "wl-paste --watch cliphist store"
+                #"wl-clipboard-history -t"
+                #"wl-paste --watch cliphist store"
                 # x11-wayland interop
-                "wl-paste --type text --watch xclip -i"
-                ''sh -c "while clipnotify; do BABY=\$(xclip -o); [ \"\$BABY\" != \"\$(wl-paste)\" ] && wl-copy \$BABY; done"''
+                #"wl-paste --type text --watch xclip -i"
+                #''sh -c "while clipnotify; do BABY=\$(xclip -o); [ \"\$BABY\" != \"\$(wl-paste)\" ] && wl-copy \$BABY; done"''
+                "pypr"
+                "hypridle"
                 #bar
                 "waybar"
                 #messaging stuff
                 "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"
                 "discord --enable-features=UseOzonePlatform --ozone-platform=x11"
-                #spotify
-                #"kitty --class spotify spotify_player"
+                "kitty --class spotify spotify_player"
             ];
 
             "windowrulev2" = [
@@ -36,7 +37,7 @@
                 #"workspace special:Messenger silent,initialTitle:messenger[.]com.*"
                 #"workspace special:Whatsapp silent,class:^(chrome[-]web[.]whatsapp[.]com[_][_][-]Default)$"
                 #"workspace special:Whatsapp silent,initialTitle:web[.]whatsapp[.]com.*"
-                #"workspace special:Spotify silent,class:^(spotify)$"
+                "workspace special:Spotify silent,class:^(spotify)$"
             ];
 
             general = {
@@ -144,7 +145,7 @@
                 "${mainMod}, V, togglefloating,"
                 "${mainMod}, R, exec, $menu"
                 "${mainMod}, P, pseudo, # dwindle"
-                #"${mainMod}, J, togglesplit, # dwindle"
+                "${mainMod}, I, togglesplit, # dwindle"
                 "${mainMod}, B, exec, firefox # dwindle"
                 "${mainMod}, D, exec, code --enable-features=UseOzonePlatform --ozone-platform=x11"
                 "${mainMod}, H, movefocus, l"
@@ -155,9 +156,10 @@
                 #"${mainMod}, mouse_up, workspace, e-1"
                 "${mainMod} SHIFT, Q, togglespecialworkspace, Signal"
                 "${mainMod} SHIFT, D, togglespecialworkspace, Discord"
-                #"${mainMod} SHIFT, A, togglespecialworkspace, Messenger"
-                #"${mainMod} SHIFT, W, togglespecialworkspace, Whatsapp"
-                #"${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
+                "${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
+                "${mainMod} CTRL, V, exec, pypr toggle volume"
+                #$volume_sidemenu = ^(pavucontrol)$
+                #windowrule = float, $volume_sidemenu
             ] ++ (
                 # workspaces
                 # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
@@ -175,12 +177,16 @@
                 10)
             );
             bindm = [
-                "${mainMod}, mouse:272, movewindow"
-                "${mainMod}, mouse:273, resizewindow"
+                #"${mainMod}, mouse:272, movewindow"
+                #"${mainMod}, mouse:273, resizewindow"
             ];
             binde = [
-                "${mainMod}, XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
-                "${mainMod}, XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+                ", code:67, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
+                ", code:68, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
+                ", code:69, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
+                ", code:70, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+                ", code:71, exec, brightnessctl s 5%-"
+                ", code:72, exec, brightnessctl s 5%+"
             ];
 
         };

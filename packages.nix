@@ -5,10 +5,12 @@
     pkgs.swaylock
     pkgs.swaybg
     pkgs.waybar
-    pkgs.swayidle
+    #pkgs.swayidle
     pkgs.glxinfo
-
-    pkgs.xbindkeys
+    pkgs.hyprlock
+    pkgs.hypridle
+    pkgs.pyprland
+    pkgs.brightnessctl
 
     pkgs.wpa_supplicant_gui
 
@@ -42,7 +44,7 @@
     pkgs.tmate
     pkgs.tailscale
     pkgs.firefox
-    pkgs.spotify
+    pkgs.spotify-player
     pkgs.go_1_21
     pkgs.rustc
     pkgs.cargo

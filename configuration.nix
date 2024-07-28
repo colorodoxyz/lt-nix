@@ -57,7 +57,9 @@
   time.hardwareClockInLocalTime = true;
 
   # Enable sound.
-  sound.enable = true;
+  sound = {
+    enable = true;
+  };
   hardware.pulseaudio.enable = true;
 
   users.mutableUsers = false;
@@ -94,6 +96,8 @@
     };
   };
 
+
+  programs.light.enable = true;
   # Enables copy / paste when running in a KVM with spice.
   services = {
     spice-vdagentd.enable = true;

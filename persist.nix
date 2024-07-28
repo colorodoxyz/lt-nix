@@ -28,8 +28,8 @@
         ".config/Signal"
         ".config/discord"
         ".config/darktable"
-
-        ".cache/spotify"
+        ".config/spotify-player"
+        ".cache/spotify-player"
 
         ".mozilla"
 
