@@ -112,13 +112,6 @@
 
   virtualisation.docker.enable = true;
 
-  fonts.packages = with pkgs; [
-    fira-mono
-    hack-font
-    inconsolata
-    iosevka
-  ];
-
   services.xserver = {
     enable = true;
     videoDrivers = [ "amdgpu" ];

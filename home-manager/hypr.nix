@@ -17,8 +17,9 @@
                 # x11-wayland interop
                 #"wl-paste --type text --watch xclip -i"
                 #''sh -c "while clipnotify; do BABY=\$(xclip -o); [ \"\$BABY\" != \"\$(wl-paste)\" ] && wl-copy \$BABY; done"''
-                "pypr"
-                "hypridle"
+                "swaybg -i /nix/persist/bonsai/home-manager/desktopBg.jpg -m fill"
+                #"pypr"
+                #"hypridle"
                 #bar
                 "waybar"
                 #messaging stuff

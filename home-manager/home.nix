@@ -24,10 +24,13 @@
     systemdTarget = "hyprland-session.target";
   };
 
+  #services.hypridle.enable = true;
+
   programs = {
     home-manager.enable = true;
+    hyprlock.enable = true;
 
-    firefox.enable = true;
+    #firefox.enable = true;
 
     kitty = {
 	enable = true;

@@ -1,5 +1,14 @@
 { zig, pkgs, pkgs-unstable, ... }:
 {
+
+  fonts.packages = with pkgs; [
+    fira-mono
+    hack-font
+    inconsolata
+    iosevka
+    font-awesome
+  ];
+
   environment.systemPackages = [
     pkgs.xwayland
     pkgs.swaylock
@@ -7,8 +16,6 @@
     pkgs.waybar
     #pkgs.swayidle
     pkgs.glxinfo
-    pkgs.hyprlock
-    pkgs.hypridle
     pkgs.pyprland
     pkgs.brightnessctl
 
