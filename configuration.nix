@@ -60,7 +60,10 @@
   sound = {
     enable = true;
   };
-  hardware.pulseaudio.enable = true;
+  hardware = {
+    bluetooth.enable = true;
+    pulseaudio.enable = true;
+  };
 
   users.mutableUsers = false;
 

@@ -13,46 +13,52 @@
     '';
   };
 
-  services.wlsunset = {
-    enable = true;
-    latitude = 37.5;
-    longitude = -121.9;
-    temperature = {
-      night = 3000;
-    };
-    systemdTarget = "hyprland-session.target";
-  };
-
-  services.hypridle = {
-    enable = true;
-    settings = {
-      general = {
-        before_sleep_cmd = "loginctl lock-session";
-        after_sleep_cmd = "hyprctl dispatch dpms on";
-        ignore_dbus_inhibit = false;
-        lock_cmd = "pidof hyprlock || hyprlock";
+  services = {
+    wlsunset = {
+      enable = true;
+      latitude = 37.5;
+      longitude = -121.9;
+      temperature = {
+        night = 3000;
       };
+      systemdTarget = "hyprland-session.target";
+    };
 
-      listener = [
-        {
-          timeout = 150;
-          on-timeout = "brightnessctl -s set 0";
-          on-resume = "brightnessctl -r";
-        }
-        {
-          timeout = 300;
-          on-timeout = "loginctl lock-session";
-        }
-        {
-          timeout = 330;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
-        }
-        {
-          timeout = 1800;
-          on-timeout = "systemctl suspend";
-        }
-      ];
+    hypridle = {
+      enable = true;
+      settings = {
+        general = {
+          before_sleep_cmd = "loginctl lock-session";
+          after_sleep_cmd = "hyprctl dispatch dpms on";
+          ignore_dbus_inhibit = false;
+          lock_cmd = "pidof hyprlock || hyprlock";
+        };
+
+        listener = [
+          {
+            timeout = 150;
+            on-timeout = "brightnessctl -s set 0";
+            on-resume = "brightnessctl -r";
+          }
+          {
+            timeout = 300;
+            on-timeout = "loginctl lock-session";
+          }
+          {
+            timeout = 330;
+            on-timeout = "hyprctl dispatch dpms off";
+            on-resume = "hyprctl dispatch dpms on";
+          }
+          {
+            timeout = 1800;
+            on-timeout = "systemctl suspend";
+          }
+        ];
+      };
+    };
+
+    blueman-applet = {
+      enable = true;
     };
   };
 
@@ -97,10 +103,9 @@
     firefox.enable = true;
 
     kitty = {
-	enable = true;
-	#theme = "Argonaut";
-	#extraConfig = (builtins.readFile ./kitty.conf);
-	#background_image = "/home/colorodo/th-1524566410.jpg";
+      enable = true;
+      theme = "Argonaut";
+      #extraConfig = (builtins.readFile ./kitty.conf);
     };
 
     git = {

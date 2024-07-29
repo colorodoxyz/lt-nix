@@ -17,12 +17,9 @@
                 # x11-wayland interop
                 "wl-paste --type text --watch xclip -i"
                 ''sh -c "while clipnotify; do BABY=\$(xclip -o); [ \"\$BABY\" != \"\$(wl-paste)\" ] && wl-copy \$BABY; done"''
+
                 "swaybg -i /nix/persist/bonsai/home-manager/dbbg.png"
-                #"pypr"
-                #"hypridle"
-                #bar
                 "waybar"
-                #messaging stuff
                 "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"
                 "discord --enable-features=UseOzonePlatform --ozone-platform=x11"
                 "kitty --class spotify spotify_player"
@@ -34,10 +31,6 @@
                 "workspace special:Signal silent,class:^(Signal)$"
                 "workspace special:Discord silent,class:^(discord)$"
                 "workspace special:Discord silent,class:^(Discord)$"
-                #"workspace special:Messenger silent,class:^(chrome[-]messenger[.]com[_][_][-]Default)$"
-                #"workspace special:Messenger silent,initialTitle:messenger[.]com.*"
-                #"workspace special:Whatsapp silent,class:^(chrome[-]web[.]whatsapp[.]com[_][_][-]Default)$"
-                #"workspace special:Whatsapp silent,initialTitle:web[.]whatsapp[.]com.*"
                 "workspace special:Spotify silent,class:^(spotify)$"
             ];
 
@@ -153,14 +146,9 @@
                 "${mainMod}, L, movefocus, r"
                 "${mainMod}, K, movefocus, u"
                 "${mainMod}, J, movefocus, d"
-                #"${mainMod}, mouse_down, workspace, e+1"
-                #"${mainMod}, mouse_up, workspace, e-1"
                 "${mainMod} SHIFT, Q, togglespecialworkspace, Signal"
                 "${mainMod} SHIFT, D, togglespecialworkspace, Discord"
                 "${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
-                "${mainMod} CTRL, V, exec, pypr toggle volume"
-                #$volume_sidemenu = ^(pavucontrol)$
-                #windowrule = float, $volume_sidemenu
             ] ++ (
                 # workspaces
                 # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}

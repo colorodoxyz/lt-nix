@@ -14,7 +14,6 @@
     pkgs.swaybg
     pkgs.waybar
     pkgs.glxinfo
-    pkgs.pyprland
     pkgs.brightnessctl
 
     pkgs.wpa_supplicant_gui
@@ -32,6 +31,8 @@
     pkgs.wl-clip-persist
     pkgs.clipnotify
     pkgs.xclip
+
+    pkgs.blueman
 
     pkgs.remarkable-mouse
     pkgs.parallel
