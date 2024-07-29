@@ -18,19 +18,83 @@
     latitude = 37.5;
     longitude = -121.9;
     temperature = {
-      #day = 3500;
       night = 3000;
     };
     systemdTarget = "hyprland-session.target";
   };
 
-  #services.hypridle.enable = true;
+  services.hypridle = {
+    enable = true;
+    settings = {
+      general = {
+        before_sleep_cmd = "loginctl lock-session";
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+        lock_cmd = "pidof hyprlock || hyprlock";
+      };
+
+      listener = [
+        {
+          timeout = 150;
+          on-timeout = "brightnessctl -s set 0";
+          on-resume = "brightnessctl -r";
+        }
+        {
+          timeout = 300;
+          on-timeout = "loginctl lock-session";
+        }
+        {
+          timeout = 330;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+        {
+          timeout = 1800;
+          on-timeout = "systemctl suspend";
+        }
+      ];
+    };
+  };
 
   programs = {
     home-manager.enable = true;
-    hyprlock.enable = true;
+    hyprlock = {
+      enable = true;
+      settings = {
+        general = {
+          disable_loading_bar = true;
+          ignore_empty_input = true;
+          hide_cursor = true;
+          no_fade_in = false;
+        };
 
-    #firefox.enable = true;
+        background = [
+          {
+            path = "screenshot";
+            blur_passes = 3;
+            blur_size = 8;
+          }
+        ];
+
+        input-field = [
+          {
+            size = "200, 50";
+            position = "0, -80";
+            monitor = "";
+            dots_center = true;
+            fade_on_empty = false;
+            font_color = "rgb(202, 211, 245)";
+            inner_color = "rgb(91, 96, 120)";
+            outer_color = "rgb(24, 25, 38)";
+            outline_thickness = 5;
+            placeholder_text = "\'Password...\'";
+            shadow_passes = 2;
+          }
+        ];
+      };
+    };
+
+    firefox.enable = true;
 
     kitty = {
 	enable = true;

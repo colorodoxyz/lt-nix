@@ -11,10 +11,8 @@
 
   environment.systemPackages = [
     pkgs.xwayland
-    pkgs.swaylock
     pkgs.swaybg
     pkgs.waybar
-    #pkgs.swayidle
     pkgs.glxinfo
     pkgs.pyprland
     pkgs.brightnessctl
@@ -26,9 +24,14 @@
     pkgs.wofi
     pkgs.gtk3
 
-
     pkgs.vulkan-tools
     pkgs.mako
+
+    pkgs.cliphist
+    pkgs.wl-clipboard
+    pkgs.wl-clip-persist
+    pkgs.clipnotify
+    pkgs.xclip
 
     pkgs.remarkable-mouse
     pkgs.parallel
@@ -42,7 +45,6 @@
     pkgs.tor-browser
     pkgs.ranger
     pkgs.keepassxc
-    pkgs.xclip
     pkgs.gzip
     pkgs.nodejs
     pkgs.gotop

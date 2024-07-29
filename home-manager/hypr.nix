@@ -12,12 +12,12 @@
             };
             exec-once = [
                 # regular copy-paste
-                #"wl-clipboard-history -t"
-                #"wl-paste --watch cliphist store"
+                "wl-clipboard-history -t"
+                "wl-paste --watch cliphist store"
                 # x11-wayland interop
-                #"wl-paste --type text --watch xclip -i"
-                #''sh -c "while clipnotify; do BABY=\$(xclip -o); [ \"\$BABY\" != \"\$(wl-paste)\" ] && wl-copy \$BABY; done"''
-                "swaybg -i /nix/persist/bonsai/home-manager/desktopBg.jpg -m fill"
+                "wl-paste --type text --watch xclip -i"
+                ''sh -c "while clipnotify; do BABY=\$(xclip -o); [ \"\$BABY\" != \"\$(wl-paste)\" ] && wl-copy \$BABY; done"''
+                "swaybg -i /nix/persist/bonsai/home-manager/dbbg.png"
                 #"pypr"
                 #"hypridle"
                 #bar
