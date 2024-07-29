@@ -131,13 +131,11 @@
             };
 
             bind = [
-                "${mainMod},SPACE,exec,cliphist list | wofi --show dmenu -H 600 -W 900   | cliphist decode | wl-copy"
                 "${mainMod}, F, fullscreen, 2"
-                "${mainMod}, Q, exec, kitty"
+                "${mainMod}, Q, exec, KITTY_ENABLE_WAYLAND=1 kitty"
                 "${mainMod}, C, killactive,"
                 "${mainMod}, M, exit,"
                 "${mainMod}, V, togglefloating,"
-                "${mainMod}, R, exec, $menu"
                 "${mainMod}, P, pseudo, # dwindle"
                 "${mainMod}, I, togglesplit, # dwindle"
                 "${mainMod}, B, exec, firefox # dwindle"
@@ -146,6 +144,10 @@
                 "${mainMod}, L, movefocus, r"
                 "${mainMod}, K, movefocus, u"
                 "${mainMod}, J, movefocus, d"
+                "${mainMod} SHIFT, H, movewindow, l"
+                "${mainMod} SHIFT, L, movewindow, r"
+                "${mainMod} SHIFT, K, movewindow, u"
+                "${mainMod} SHIFT, J, movewindow, d"
                 "${mainMod} SHIFT, Q, togglespecialworkspace, Signal"
                 "${mainMod} SHIFT, D, togglespecialworkspace, Discord"
                 "${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
@@ -165,9 +167,13 @@
                 )
                 10)
             );
+            bindr = [
+                "${mainMod}, R, exec, pkill wofi || $menu"
+                "${mainMod},SPACE,exec, pkill wofi || cliphist list | wofi --show dmenu -H 600 -W 900   | cliphist decode | wl-copy"
+            ];
             bindm = [
-                #"${mainMod}, mouse:272, movewindow"
-                #"${mainMod}, mouse:273, resizewindow"
+                "${mainMod}, mouse:272, movewindow"
+                "${mainMod}, mouse:273, resizewindow"
             ];
             binde = [
                 ", code:67, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
@@ -176,6 +182,15 @@
                 ", code:70, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
                 ", code:71, exec, brightnessctl s 5%-"
                 ", code:72, exec, brightnessctl s 5%+"
+                # Window resizing
+                "${mainMod}, right, resizeactive, 5 0"
+                "${mainMod} SHIFT, right, resizeactive, 10 0"
+                "${mainMod}, left, resizeactive, -5 0"
+                "${mainMod} SHIFT, left, resizeactive, -10 0"
+                "${mainMod}, up, resizeactive, 0 5"
+                "${mainMod} SHIFT, up, resizeactive, 0 10"
+                "${mainMod}, down, resizeactive, 0 -5"
+                "${mainMod} SHIFT, down, resizeactive, 0 -10"
             ];
 
         };
