@@ -5,18 +5,14 @@
         settings = let
             mainMod = "SUPER";
         in {
-            "$menu" = "wofi --show drun";
+            "$menu" = "bemenu-run";
             monitor = ",highres,auto,1";
             xwayland = {
                 force_zero_scaling = true;
             };
             exec-once = [
                 # regular copy-paste
-                "wl-clipboard-history -t"
-                "wl-paste --watch cliphist store"
-                # x11-wayland interop
-                "wl-paste --type text --watch xclip -i"
-                ''sh -c "while clipnotify; do BABY=\$(xclip -o); [ \"\$BABY\" != \"\$(wl-paste)\" ] && wl-copy \$BABY; done"''
+                "clipse -listen"
 
                 "swaybg -i /nix/persist/bonsai/home-manager/dbbg.png"
                 "waybar"
@@ -32,6 +28,12 @@
                 "workspace special:Discord silent,class:^(discord)$"
                 "workspace special:Discord silent,class:^(Discord)$"
                 "workspace special:Spotify silent,class:^(spotify)$"
+                "float,class:(clipse)"
+                "size 622 652,class:(clipse)"
+                "float,class:(pavucontrol)"
+                "size 500 500,class:(pavucontrol"
+                "move 100%-w-5 3%:class:(pavucontrol)"
+                "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
             ];
 
             general = {
@@ -169,7 +171,8 @@
             );
             bindr = [
                 "${mainMod}, R, exec, pkill wofi || $menu"
-                "${mainMod},SPACE,exec, pkill wofi || cliphist list | wofi --show dmenu -H 600 -W 900   | cliphist decode | wl-copy"
+                "${mainMod},SPACE, exec, pkill clipse || kitty --class clipse -e clipse"
+                "${mainMod},X, exec, pkill pavucontrol || pavucontrol"
             ];
             bindm = [
                 "${mainMod}, mouse:272, movewindow"

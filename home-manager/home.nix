@@ -100,6 +100,8 @@
       };
     };
 
+    bemenu.enable = true;
+
     firefox.enable = true;
 
     kitty = {

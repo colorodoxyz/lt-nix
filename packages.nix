@@ -26,11 +26,9 @@
     pkgs.vulkan-tools
     pkgs.mako
 
-    pkgs.cliphist
     pkgs.wl-clipboard
     pkgs.wl-clip-persist
-    pkgs.clipnotify
-    pkgs.xclip
+    pkgs.clipse
 
     pkgs.blueman
 
