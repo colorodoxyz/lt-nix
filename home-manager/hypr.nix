@@ -11,9 +11,8 @@
                 force_zero_scaling = true;
             };
             exec-once = [
-                # regular copy-paste
                 "clipse -listen"
-
+                "hypridle"
                 "swaybg -i /nix/persist/bonsai/home-manager/dbbg.png"
                 "waybar"
                 "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"

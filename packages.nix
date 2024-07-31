@@ -15,6 +15,7 @@
     pkgs.waybar
     pkgs.glxinfo
     pkgs.brightnessctl
+    pkgs.hypridle
 
     pkgs.wpa_supplicant_gui
 
