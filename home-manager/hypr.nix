@@ -18,6 +18,7 @@
                 "waybar"
                 "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"
                 "discord --enable-features=UseOzonePlatform --ozone-platform=x11"
+                "keepassxc"
                 "kitty --class spotify spotify_player"
             ];
 
@@ -28,6 +29,7 @@
                 "workspace special:Discord silent,class:^(discord)$"
                 "workspace special:Discord silent,class:^(Discord)$"
                 "workspace special:Spotify silent,class:^(spotify)$"
+                "workspace special:Keepassxc silent,class:(keepassxc)"
                 "float,class:(clipse)"
                 "size 622 652,class:(clipse)"
                 "float,class:(pavucontrol)"
@@ -153,6 +155,7 @@
                 "${mainMod} SHIFT, Q, togglespecialworkspace, Signal"
                 "${mainMod} SHIFT, D, togglespecialworkspace, Discord"
                 "${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
+                "${mainMod} SHIFT, K, togglespecialworkspace, Keepassxc"
             ] ++ (
                 # workspaces
                 # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
