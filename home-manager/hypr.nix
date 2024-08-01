@@ -122,7 +122,7 @@
                 sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
 
                 touchpad = {
-                    natural_scroll = false;
+                    natural_scroll = true;
                 };
             };
 
@@ -155,6 +155,9 @@
                 "${mainMod} SHIFT, D, togglespecialworkspace, Discord"
                 "${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
                 "${mainMod} SHIFT, K, togglespecialworkspace, Keepassxc"
+                "${mainMod}, PRINT, exec, hyprshot -m window"
+                ", PRINT, exec, hyprshot -m output"
+                "${mainMod} SHIFT, PRINT, exec, hyprshot -m region"
             ] ++ (
                 # workspaces
                 # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}

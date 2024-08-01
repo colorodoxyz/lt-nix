@@ -38,6 +38,7 @@
         "go"
         "processing"
         "photoJpgs"
+        "screenshots"
         "Downloads"
       ];
       files = [

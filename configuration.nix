@@ -21,6 +21,7 @@
       BROWSER = "firefox";
       DEFAULT_BROWSER = "firefox";
       TERMINAL = "kitty";
+      HYPRSHOT_DIR = "/home/gromit/screenshots/";
     };
     etc =
     lib.mapAttrs'

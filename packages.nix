@@ -16,6 +16,7 @@
     pkgs.glxinfo
     pkgs.brightnessctl
     pkgs.hypridle
+    pkgs.hyprshot
 
     pkgs.wpa_supplicant_gui
 
@@ -32,6 +33,7 @@
     pkgs.clipse
 
     pkgs.blueman
+    pkgs.wev
 
     pkgs.remarkable-mouse
     pkgs.parallel
@@ -48,7 +50,6 @@
     pkgs.gzip
     pkgs.nodejs
     pkgs.gotop
-    pkgs.flameshot
     pkgs.libreoffice
     pkgs.tmate
     pkgs.tailscale
