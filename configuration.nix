@@ -107,6 +107,18 @@
   # Enables copy / paste when running in a KVM with spice.
   services = {
     spice-vdagentd.enable = true;
+
+    syncthing = {
+      enable = true;
+      user = "gromit";
+      dataDir = "/home/gromit/Documents";
+      configDir = "/home/gromit/.config/syncthing";
+    };
+
+    xserver = {
+      enable = true;
+      videoDrivers = [ "amdgpu" ];
+    };
   };
   systemd.services.restart-nm = {
     wantedBy = ["suspend.target"];
@@ -115,11 +127,6 @@
   };
 
   virtualisation.docker.enable = true;
-
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "amdgpu" ];
-  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";

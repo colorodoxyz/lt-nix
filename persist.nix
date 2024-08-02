@@ -40,6 +40,7 @@
         "photoJpgs"
         "screenshots"
         "Downloads"
+        "Documents"
       ];
       files = [
         ".bash_history"

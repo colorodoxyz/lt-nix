@@ -12,6 +12,7 @@
                 modules-right = [
                     "memory"
                     "cpu"
+                    "temperature"
                     #"wireplumber"
                     "pulseaudio"
                     "network"
@@ -36,6 +37,10 @@
                         "default" = "";
                         "active" = "*";
                     };
+                };
+                "temperature" = {
+                  "hwmon-path-abs" = "/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input";
+                  #"format" = "";
                 };
 
                 "battery" = {
