@@ -30,6 +30,8 @@
         ".config/discord"
         ".config/darktable"
         ".config/spotify-player"
+        ".config/syncthing"
+        ".config/keepassxc"
         ".cache/spotify-player"
 
         ".mozilla"
@@ -41,6 +43,7 @@
         "screenshots"
         "Downloads"
         "Documents"
+        "Sync"
       ];
       files = [
         ".bash_history"
