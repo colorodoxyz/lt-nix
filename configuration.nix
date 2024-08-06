@@ -22,6 +22,8 @@
       DEFAULT_BROWSER = "firefox";
       TERMINAL = "kitty";
       HYPRSHOT_DIR = "/home/gromit/screenshots/";
+      PIA_USER = inputs.piss.pia.PIA_USER;
+      PIA_PASS = inputs.piss.pia.PIA_PASS;
     };
     etc =
     lib.mapAttrs'
@@ -98,6 +100,7 @@
         treetrim="cd /nix/persist/bonsai/";
         workup="cd /nix/persist/workspace/";
         tailup="sudo tailscale up --accept-routes";
+        piaUp="sudo ~/manual-connections/run_setup.sh";
       };
     };
     hyprland.enable = true;

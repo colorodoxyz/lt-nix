@@ -44,6 +44,7 @@
         "Downloads"
         "Documents"
         "Sync"
+        "manual-connections"
       ];
       files = [
         ".bash_history"
