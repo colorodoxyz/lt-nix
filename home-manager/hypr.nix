@@ -17,8 +17,8 @@
                 "waybar"
                 "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"
                 "discord --enable-features=UseOzonePlatform --ozone-platform=x11"
-                "keepassxc"
                 "kitty --class spotify spotify_player"
+                "keepassxc"
             ];
 
             "windowrulev2" = [

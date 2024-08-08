@@ -100,7 +100,7 @@
         treetrim="cd /nix/persist/bonsai/";
         workup="cd /nix/persist/workspace/";
         tailup="sudo tailscale up --accept-routes";
-        piaUp="sudo ~/manual-connections/run_setup.sh";
+        piaUp="sudo PIA_USER=$PIA_USER PIA_PASS=$PIA_PASS ~/manual-connections/run_setup.sh";
       };
     };
     hyprland.enable = true;

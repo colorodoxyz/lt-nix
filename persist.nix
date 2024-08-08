@@ -15,8 +15,6 @@
     ];
     users.gromit = {
       directories = [
-        ".local/share/kscreen"
-	    ".local/share/kwalletd"
         ".local/share/sddm"
         ".local/share/zoxide"
         ".local/share/Steam"
@@ -33,6 +31,7 @@
         ".config/syncthing"
         ".config/keepassxc"
         ".cache/spotify-player"
+        ".cache/keepassxc"
 
         ".mozilla"
 
