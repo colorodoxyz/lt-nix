@@ -35,6 +35,8 @@
     pkgs.blueman
     pkgs.wev
 
+    pkgs.halloy
+
     pkgs.remarkable-mouse
     pkgs.parallel
     pkgs.dnglab
