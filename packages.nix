@@ -57,8 +57,8 @@
     pkgs.tailscale
     pkgs.firefox
     pkgs.spotify-player
-    pkgs.go_1_21
-    pkgs.rustc
+    pkgs.go
+    pkgs-unstable.rustc
     pkgs.cargo
     pkgs.lxappearance
     pkgs.steam
