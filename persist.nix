@@ -5,6 +5,7 @@
       "/var/log"
       "/var/lib/systemd/coredump"
       "/var/lib/bluetooth"
+      "/var/lib/tailscale"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
@@ -20,6 +21,8 @@
         ".local/share/Steam"
         ".local/share/nvim"
 
+        ".config/Code"
+        ".config/OrcaSlicer"
         ".config/kitty"
         ".config/nvim"
         ".config/element"
@@ -32,6 +35,8 @@
         ".config/keepassxc"
         ".cache/spotify-player"
         ".cache/keepassxc"
+        ".cache/nvim"
+        ".cache/orca-slicer"
 
         ".mozilla"
 

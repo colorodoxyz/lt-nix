@@ -59,13 +59,9 @@
   time.timeZone = "America/Los_Angeles";
   time.hardwareClockInLocalTime = true;
 
-  # Enable sound.
-  sound = {
-    enable = true;
-  };
   hardware = {
     bluetooth.enable = true;
-    pulseaudio.enable = true;
+    #pulseaudio.enable = true;
   };
 
   users.mutableUsers = false;
@@ -92,7 +88,7 @@
         gl="git pull";
         gu="git push";
         gadd="git add";
-        vim="nvim";
+        nv="nvim";
         gcheck="git checkout";
         la="ls -lhA";
         nxrb="sudo nixos-rebuild switch --flake /nix/persist/bonsai#wumbo";
@@ -109,6 +105,7 @@
 
   # Enables copy / paste when running in a KVM with spice.
   services = {
+    tailscale.enable = true;
     spice-vdagentd.enable = true;
 
     syncthing = {

@@ -25,8 +25,10 @@
     pkgs.wofi
     pkgs.gtk3
 
+    pkgs.chromium
     pkgs.vulkan-tools
     pkgs.mako
+    pkgs.orca-slicer
 
     pkgs.wl-clipboard
     pkgs.wl-clip-persist
@@ -35,7 +37,11 @@
     pkgs.blueman
     pkgs.wev
 
+    pkgs.vscode
+
     pkgs.halloy
+    pkgs.wineWow64Packages.full
+    pkgs.unrar
 
     pkgs.remarkable-mouse
     pkgs.parallel
@@ -56,10 +62,13 @@
     pkgs.tmate
     pkgs.tailscale
     pkgs.firefox
-    pkgs.spotify-player
+    pkgs-unstable.spotify-player
     pkgs.go
+
     pkgs-unstable.rustc
-    pkgs.cargo
+    pkgs-unstable.clippy
+    pkgs-unstable.cargo
+
     pkgs.lxappearance
     pkgs.steam
     pkgs.gcc
@@ -80,7 +89,6 @@
     pkgs.gnumake
     pkgs.qemu
     pkgs.jq
-    pkgs.qbittorrent
     pkgs.signal-desktop
     pkgs.awscli2
     pkgs.python3

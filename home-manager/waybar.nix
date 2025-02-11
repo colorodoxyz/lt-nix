@@ -56,7 +56,7 @@
                     "format-icons" = ["" "" "" "" ""];
                 };
 
-                "pulseaudio" = {
+                /*"pulseaudio" = {
                     "format" = "{volume}% {icon} {format_source}";
                     #"format-bluetooth" = "{volume}% {icon} {format_source}";
                     #"format-bluetooth-muted" = " {icon} {format_source}";
@@ -73,7 +73,7 @@
                         "default" = ["" "" ""];
                     };
                     "on-click" = "pavucontrol";
-                };
+                };*/
 
                 "cpu" = {
                     "interval" = 2;

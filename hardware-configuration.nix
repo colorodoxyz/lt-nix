@@ -24,10 +24,7 @@
     kernelParams = [ "psmouse.synaptics_intertouch=0" ];
   };
 
-  hardware.opengl = {
-    driSupport = true;
-    driSupport32Bit = true;
-  };
+  hardware.graphics.enable32Bit = true;
 
   fileSystems."/" =
     {
