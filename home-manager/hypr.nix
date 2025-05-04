@@ -31,9 +31,9 @@
                 "workspace special:Keepassxc silent,class:(keepassxc)"
                 "float,class:(clipse)"
                 "size 622 652,class:(clipse)"
-                "float,class:(pavucontrol)"
-                "size 500 500,class:(pavucontrol"
-                "move 100%-w-5 3%:class:(pavucontrol)"
+                #"float,class:(pavucontrol)"
+                #"size 500 500,class:(pavucontrol"
+                #"move 100%-w-5 3%:class:(pavucontrol)"
                 "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
             ];
 
@@ -63,10 +63,12 @@
                 active_opacity = 1.0;
                 inactive_opacity = 1.0;
 
+/*
                 drop_shadow = true;
                 shadow_range = 4;
                 shadow_render_power = 3;
                 "col.shadow" = "rgba(1a1a1aee)";
+                */
 
                 # https://wiki.hyprland.org/Configuring/Variables/#blur
                 blur = {
@@ -177,7 +179,7 @@
             bindr = [
                 "${mainMod}, R, exec, pkill wofi || $menu"
                 "${mainMod},SPACE, exec, pkill clipse || kitty --class clipse -e clipse"
-                "${mainMod},X, exec, pkill pavucontrol || pavucontrol"
+                #"${mainMod},X, exec, pkill pavucontrol || pavucontrol"
             ];
             bindm = [
                 "${mainMod}, mouse:272, movewindow"

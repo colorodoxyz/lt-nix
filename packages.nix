@@ -25,10 +25,11 @@
     pkgs.wofi
     pkgs.gtk3
 
+    pkgs.rpi-imager
     pkgs.chromium
     pkgs.vulkan-tools
     pkgs.mako
-    pkgs.orca-slicer
+    #pkgs.orca-slicer
 
     pkgs.wl-clipboard
     pkgs.wl-clip-persist
@@ -80,9 +81,9 @@
     pkgs.gitFull
     pkgs.ripgrep
     pkgs.lsof
-    pkgs.pulseaudioFull
+    #pkgs.pulseaudioFull
     pkgs.paprefs
-    pkgs.pavucontrol
+    #pkgs.pavucontrol
     pkgs.discord
     pkgs.vlc
     pkgs.efibootmgr
