@@ -29,7 +29,7 @@
     pkgs.chromium
     pkgs.vulkan-tools
     pkgs.mako
-    #pkgs.orca-slicer
+    pkgs.orca-slicer
 
     pkgs.wl-clipboard
     pkgs.wl-clip-persist

@@ -26,12 +26,12 @@
         rustPlatform = prev.rustPlatform // {
           buildRustPackage = args: prev.rustPlatform.buildRustPackage (args // {
             pname = "spotify-player";
-            version = "0.20.1";
+            version = "0.20.4";
 
             src = prev.fetchFromGitHub {
               owner = "aome510";
               repo = "spotify-player";
-              rev = "refs/tags/v0.20.1";
+              rev = "refs/tags/v0.20.4";
               sha256 = "sha256-SKlESIw8eAyAqR1HVW004yyL2nNVEnb4/xmf0ch3ZMo=";
             };
             cargoHash = "sha256-VlJ8Bz4EY2rERyOn6ifC7JAL5Mvjt0ZOzlPBOwiH6WA=";

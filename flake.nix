@@ -12,7 +12,7 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    piss.url = "git+file:./chumbawumba";
+    piss.url = "git+file:/nix/persist/bonsai/chumbawumba";
   };
 
   outputs = inputs@{ nixpkgs, nixpkgs-unstable, zig, impermanence, home-manager, ... }: {
@@ -48,7 +48,7 @@
             });
             # import ./home.nix;
           }
-          (import ./overlays.nix)
+          #(import ./overlays.nix)
         ];
       };
     };
