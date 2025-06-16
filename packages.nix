@@ -9,92 +9,90 @@
     font-awesome
   ];
 
-  environment.systemPackages = [
-    pkgs.xwayland
-    pkgs.swaybg
-    pkgs.waybar
-    pkgs.glxinfo
-    pkgs.brightnessctl
-    pkgs.hypridle
-    pkgs.hyprshot
+  environment.systemPackages = with pkgs; [
+    xwayland
+    swaybg
+    waybar
+    glxinfo
+    brightnessctl
+    hypridle
+    hyprshot
 
-    pkgs.wpa_supplicant_gui
+    wpa_supplicant_gui
 
     zig.packages."x86_64-linux".master
 
-    pkgs.wofi
-    pkgs.gtk3
+    wofi
+    gtk3
 
-    pkgs.rpi-imager
-    pkgs.chromium
-    pkgs.vulkan-tools
-    pkgs.mako
-    pkgs.orca-slicer
+    rpi-imager
+    chromium
+    vulkan-tools
+    mako
+    orca-slicer
 
-    pkgs.wl-clipboard
-    pkgs.wl-clip-persist
-    pkgs.clipse
+    wl-clipboard
+    wl-clip-persist
+    clipse
 
-    pkgs.blueman
-    pkgs.wev
+    blueman
+    wev
 
-    pkgs.vscode
+    vscode
 
-    pkgs.halloy
-    pkgs.wineWow64Packages.full
-    pkgs.unrar
+    halloy
+    wineWow64Packages.full
+    unrar
 
-    pkgs.remarkable-mouse
-    pkgs.parallel
-    pkgs.dnglab
+    remarkable-mouse
+    parallel
+    dnglab
     pkgs-unstable.darktable
-    pkgs.ranger
-    pkgs.element-desktop
-    pkgs.xournalpp
-    pkgs.s5cmd
-    pkgs.rclone
-    pkgs.tor-browser
-    pkgs.ranger
-    pkgs.keepassxc
-    pkgs.gzip
-    pkgs.nodejs
-    pkgs.gotop
-    pkgs.libreoffice
-    pkgs.tmate
-    pkgs.tailscale
-    pkgs.firefox
+    ranger
+    element-desktop
+    xournalpp
+    s5cmd
+    rclone
+    tor-browser
+    ranger
+    keepassxc
+    gzip
+    nodejs
+    gotop
+    libreoffice
+    tmate
+    tailscale
+    firefox
     pkgs-unstable.spotify-player
-    pkgs.go
+    go
 
     pkgs-unstable.rustc
     pkgs-unstable.clippy
     pkgs-unstable.cargo
 
-    pkgs.lxappearance
-    pkgs.steam
-    pkgs.gcc
-    pkgs.gdb
-    pkgs.wireguard-tools
-    pkgs.neovim
-    pkgs.os-prober
-    pkgs.wget
-    pkgs.gitFull
-    pkgs.ripgrep
-    pkgs.lsof
-    #pkgs.pulseaudioFull
-    pkgs.paprefs
-    #pkgs.pavucontrol
-    pkgs.discord
-    pkgs.vlc
-    pkgs.efibootmgr
-    pkgs.gnumake
-    pkgs.qemu
-    pkgs.jq
-    pkgs.signal-desktop
-    pkgs.awscli2
-    pkgs.python3
-    pkgs.python311Packages.pip
-    pkgs.poetry
-    pkgs.neofetch
+    lxappearance
+    steam
+    gcc
+    gdb
+    wireguard-tools
+    neovim
+    os-prober
+    wget
+    gitFull
+    ripgrep
+    lsof
+    paprefs
+    discord
+    vlc
+    efibootmgr
+    gnumake
+    qemu
+    jq
+    signal-desktop
+    awscli2
+    python3
+    python311Packages.pip
+    poetry
+    neofetch
   ];
 }
