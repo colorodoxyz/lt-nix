@@ -1,4 +1,10 @@
-{ inputs, pkgs, lib, config, ... }: {
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./persist.nix
@@ -7,11 +13,11 @@
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
-  nix.registry = (lib.mapAttrs (_: flake: { inherit flake; })) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+  nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) ((lib.filterAttrs (_: lib.isType "flake")) inputs);
 
   # This will additionally add your inputs to the system's legacy channels
   # Making legacy nix commands consistent as well, awesome!
-  nix.nixPath = [ "/etc/nix/path" ];
+  nix.nixPath = ["/etc/nix/path"];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -26,14 +32,12 @@
       PIA_PASS = inputs.piss.pia.PIA_PASS;
     };
     etc =
-    lib.mapAttrs'
+      lib.mapAttrs'
       (name: value: {
         name = "nix/path/${name}";
         value.source = value.flake;
       })
       config.nix.registry;
-
-
   };
 
   nix.settings = {
@@ -69,9 +73,8 @@
   users.users = {
     root.initialHashedPassword = inputs.piss.tanjoubi;
     gromit = {
-
       initialHashedPassword = inputs.piss.tanjoubi;
-      extraGroups = [ "wheel" "docker" ];
+      extraGroups = ["wheel" "docker"];
       isNormalUser = true;
       shell = pkgs.zsh;
     };
@@ -81,27 +84,31 @@
     zsh = {
       enable = true;
       shellAliases = {
-        gs="git status";
-        gc="git commit -S";
-        gd="git diff";
-        gb="git branch";
-        gl="git pull";
-        gu="git push";
-        gadd="git add";
-        nv="nvim";
-        gcheck="git checkout";
-        la="ls -lhA";
-        nxrb="sudo nixos-rebuild switch --flake /nix/persist/bonsai#wumbo";
-        snu="sudo nix flake update";
-        treetrim="cd /nix/persist/bonsai/";
-        workup="cd /nix/persist/workspace/";
-        tailup="sudo tailscale up --accept-routes";
-        piaUp="sudo PIA_USER=$PIA_USER PIA_PASS=$PIA_PASS ~/manual-connections/run_setup.sh";
+        g = "git";
+        gs = "git status";
+        gc = "git commit -S";
+        gd = "git diff";
+        gb = "git branch";
+        gl = "git pull";
+        gu = "git push";
+        ga = "git add";
+        gcl = "git clone";
+        gw = "git worktree";
+        nv = "nvim";
+        gco = "git checkout";
+        la = "ls -lhA";
+        flakeup = "nix flake lock --update-input";
+        fixstore = "nix-store --repair --verify --check-contents";
+        nxrb = "sudo nixos-rebuild switch --flake /nix/persist/bonsai#wumbo";
+        snu = "sudo nix flake update";
+        treetrim = "cd /nix/persist/bonsai/";
+        workup = "cd /nix/persist/workspace/";
+        tailup = "sudo tailscale up --accept-routes";
+        piaUp = "sudo PIA_USER=$PIA_USER PIA_PASS=$PIA_PASS ~/manual-connections/run_setup.sh";
       };
     };
     hyprland.enable = true;
   };
-
 
   # Enables copy / paste when running in a KVM with spice.
   services = {
@@ -117,7 +124,7 @@
 
     xserver = {
       enable = true;
-      videoDrivers = [ "amdgpu" ];
+      videoDrivers = ["amdgpu"];
     };
   };
   systemd.services.restart-nm = {

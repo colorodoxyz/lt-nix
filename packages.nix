@@ -94,5 +94,6 @@
     python311Packages.pip
     poetry
     neofetch
+    unzip
   ];
 }
