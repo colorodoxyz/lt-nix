@@ -36,6 +36,7 @@
         #"move 100%-w-5 3%:class:(pavucontrol)"
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
       ];
+      ecosystem.no_update_news = true;
 
       general = {
         gaps_in = 0;
