@@ -13,8 +13,7 @@
                     "memory"
                     "cpu"
                     "temperature"
-                    #"wireplumber"
-                    #"pulseaudio"
+                    "wireplumber"
                     "network"
                     "battery"
                     "clock#date"
@@ -85,14 +84,12 @@
                     "format" = "{used:0.1f}G/{total:0.1f}G ";
                 };
 
-/*
                 "wireplumber" = {
                     "format" = "{volume}% {icon}";
                     "format-muted" = "";
                     "on-click" = "helvum";
                     "format-icons" = ["" "" ""];
                 };
-                */
             };
         };
     };

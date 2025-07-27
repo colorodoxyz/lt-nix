@@ -162,6 +162,7 @@
           "${mainMod}, PRINT, exec, hyprshot -m window"
           ", PRINT, exec, hyprshot -m output"
           "${mainMod} SHIFT, PRINT, exec, hyprshot -m region"
+					",XF86AudioMute,exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ]
         ++ (
           # workspaces
@@ -189,10 +190,9 @@
         "${mainMod}, mouse:273, resizewindow"
       ];
       binde = [
-        ", code:67, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
-        ", code:68, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
-        ", code:69, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
-        ", code:70, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+
+        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
         ", code:71, exec, brightnessctl s 5%-"
         ", code:72, exec, brightnessctl s 5%+"
         # Window resizing
