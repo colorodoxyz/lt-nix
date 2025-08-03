@@ -69,6 +69,7 @@
     pkgs-unstable.rustc
     pkgs-unstable.clippy
     pkgs-unstable.cargo
+		helvum
 
     lxappearance
     steam

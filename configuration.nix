@@ -97,6 +97,7 @@
         gl = "git pull";
         gu = "git push";
         ga = "git add";
+				gst = "git stage";
         gcl = "git clone";
         gw = "git worktree";
         nv = "nvim";

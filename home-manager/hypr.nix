@@ -31,9 +31,9 @@
         "workspace special:Keepassxc silent,class:^(Keepassxc)$"
         "float,class:(clipse)"
         "size 622 652,class:(clipse)"
-        #"float,class:(pavucontrol)"
-        #"size 500 500,class:(pavucontrol"
-        #"move 100%-w-5 3%:class:(pavucontrol)"
+        "float,class:(helvum)"
+        "size 500 500,class:(helvum)"
+        "move 100%-w-5 3%:class:(helvum)"
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
       ];
       ecosystem.no_update_news = true;
@@ -183,7 +183,7 @@
       bindr = [
         "${mainMod}, R, exec, pkill wofi || $menu"
         "${mainMod},SPACE, exec, pkill clipse || kitty --class clipse -e clipse"
-        #"${mainMod},X, exec, pkill pavucontrol || pavucontrol"
+        "${mainMod},X, exec, pkill helvum || helvum"
       ];
       bindm = [
         "${mainMod}, mouse:272, movewindow"
