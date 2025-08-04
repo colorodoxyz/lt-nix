@@ -47,7 +47,7 @@
     remarkable-mouse
     parallel
     dnglab
-    pkgs-unstable.darktable
+    darktable
     ranger
     element-desktop
     xournalpp
@@ -63,12 +63,12 @@
     tmate
     tailscale
     firefox
-    pkgs-unstable.spotify-player
+    spotify-player
     go
 
-    pkgs-unstable.rustc
-    pkgs-unstable.clippy
-    pkgs-unstable.cargo
+    rustc
+    clippy
+    cargo
 		helvum
 
     lxappearance
