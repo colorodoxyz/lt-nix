@@ -38,7 +38,7 @@
     blueman
     wev
 
-    vscode
+		nix-tree
 
     halloy
     wineWow64Packages.full
