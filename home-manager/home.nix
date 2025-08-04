@@ -107,7 +107,7 @@
 
     kitty = {
       enable = true;
-      theme = "Argonaut";
+      themeFile = "Argonaut";
       #extraConfig = (builtins.readFile ./kitty.conf);
     };
 
@@ -150,7 +150,9 @@
 
   services.mako = {
       enable = true;
-      defaultTimeout = 5000;
+		settings = {
+      default-timeout = 5000;
+		};
   };
 
 

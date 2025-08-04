@@ -6,6 +6,7 @@
       "/var/lib/systemd/coredump"
       "/var/lib/bluetooth"
       "/var/lib/tailscale"
+			"/var/lib/nixos"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
