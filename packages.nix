@@ -25,7 +25,7 @@
     wofi
     gtk3
 
-    rpi-imager
+		kdePackages.dolphin
     chromium
     vulkan-tools
     mako
