@@ -128,6 +128,18 @@
       configDir = "/home/gromit/.config/syncthing";
     };
 
+		avahi = {
+			enable = true;
+			nssmdns4 = true;
+			openFirewall = true;
+		};
+
+
+		printing = {
+			enable = true;
+  		drivers = [ pkgs.brlaser ];
+		};
+
     xserver = {
       enable = true;
       videoDrivers = ["amdgpu"];
