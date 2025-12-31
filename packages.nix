@@ -13,7 +13,9 @@
     xwayland
     swaybg
     waybar
-    glxinfo
+		#glxinfo
+		mesa-demos
+		filezilla
     brightnessctl
     hypridle
     hyprshot
