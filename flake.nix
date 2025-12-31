@@ -10,8 +10,15 @@
     ];
   };
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs = {
+			url = "github:nixos/nixpkgs?ref=nixos-25.05";
+			#ref = "";
+		};
+
+    nixpkgs-unstable = {
+			url = "github:nixos/nixpkgs?ref=nixos-unstable";
+			#ref = "nixos-unstable";
+		};
 
     zig.url = "github:mitchellh/zig-overlay";
 
