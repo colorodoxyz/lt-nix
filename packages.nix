@@ -29,7 +29,7 @@
     chromium
     vulkan-tools
     mako
-    orca-slicer
+		#orca-slicer
 
     wl-clipboard
     wl-clip-persist
