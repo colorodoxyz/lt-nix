@@ -25,6 +25,7 @@
     zig.packages."x86_64-linux".master
 
     wofi
+		gparted
     gtk3
 
 		kdePackages.dolphin
