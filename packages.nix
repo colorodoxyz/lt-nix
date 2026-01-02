@@ -13,7 +13,7 @@
     xwayland
     swaybg
     waybar
-		#glxinfo
+		exfat
 		mesa-demos
 		filezilla
     brightnessctl
