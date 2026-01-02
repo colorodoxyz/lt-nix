@@ -17,7 +17,6 @@
         "signal-desktop --enable-features=UseOzonePlatform --ozone-platform=x11"
         "discord --enable-features=UseOzonePlatform --ozone-platform=x11"
         "kitty --class spotify spotify_player"
-        "keepassxc"
       ];
 
       "windowrulev2" = [
@@ -27,13 +26,11 @@
         "workspace special:Discord silent,class:^(discord)$"
         "workspace special:Discord silent,class:^(Discord)$"
         "workspace special:Spotify silent,class:^(spotify)$"
-        "workspace special:Keepassxc silent,class:^(keepassxc)$"
-        "workspace special:Keepassxc silent,class:^(Keepassxc)$"
         "float,class:(clipse)"
         "size 622 652,class:(clipse)"
         "float,class:(helvum)"
         "size 500 500,class:(helvum)"
-        "move 100%-w-5 3%:class:(helvum)"
+        "move 100%-w-5 3%,class:(helvum)"
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
       ];
       ecosystem.no_update_news = true;
@@ -126,14 +123,8 @@
 
         touchpad = {
           natural_scroll = true;
+					drag_3fg=1;
         };
-      };
-
-      # https://wiki.hyprland.org/Configuring/Variables/#gestures
-      # Enable touchpad gestures
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
       };
 
       bind =
@@ -158,7 +149,6 @@
           "${mainMod} SHIFT, Q, togglespecialworkspace, Signal"
           "${mainMod} SHIFT, D, togglespecialworkspace, Discord"
           "${mainMod} SHIFT, Z, togglespecialworkspace, Spotify"
-          "${mainMod} SHIFT, K, togglespecialworkspace, Keepassxc"
           "${mainMod}, PRINT, exec, hyprshot -m window"
           ", PRINT, exec, hyprshot -m output"
           "${mainMod} SHIFT, PRINT, exec, hyprshot -m region"
