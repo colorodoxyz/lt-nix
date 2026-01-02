@@ -19,35 +19,26 @@
     brightnessctl
     hypridle
     hyprshot
-
     wpa_supplicant_gui
-
     zig.packages."x86_64-linux".master
-
     wofi
 		gparted
     gtk3
-
 		kdePackages.dolphin
     chromium
     vulkan-tools
     mako
 		pkgs-unstable.orca-slicer
-
     wl-clipboard
     wl-clip-persist
     clipse
-
     blueman
     wev
-
 		nix-tree
 		nil
-
     halloy
     wineWow64Packages.full
     unrar
-
     remarkable-mouse
     parallel
     dnglab
@@ -84,6 +75,8 @@
     os-prober
     wget
     gitFull
+		jujutsu
+		obsidian
     ripgrep
     lsof
     paprefs
