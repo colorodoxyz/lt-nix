@@ -133,6 +133,7 @@
           "${mainMod}, Q, exec, KITTY_ENABLE_WAYLAND=1 kitty"
           "${mainMod}, C, killactive,"
           "${mainMod}, M, exit,"
+					#"${mainMod} SHIFT, R, hyprctl reload"
           "${mainMod}, V, togglefloating,"
           "${mainMod}, P, pseudo, # dwindle"
           "${mainMod}, I, togglesplit, # dwindle"
@@ -152,7 +153,9 @@
           "${mainMod}, PRINT, exec, hyprshot -m window"
           ", PRINT, exec, hyprshot -m output"
           "${mainMod} SHIFT, PRINT, exec, hyprshot -m region"
+					",XF86AudioMicMute,exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 					",XF86AudioMute,exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+					#67 mute speakers 68 minus, 69 plus, 70 mute mic
         ]
         ++ (
           # workspaces
@@ -181,10 +184,10 @@
       ];
       binde = [
 
-        ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
-        ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
-        ", code:71, exec, brightnessctl s 5%-"
-        ", code:72, exec, brightnessctl s 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl s 5%+"
         # Window resizing
         "${mainMod}, right, resizeactive, 5 0"
         "${mainMod} SHIFT, right, resizeactive, 10 0"

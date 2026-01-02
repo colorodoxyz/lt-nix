@@ -42,6 +42,7 @@
     wev
 
 		nix-tree
+		nil
 
     halloy
     wineWow64Packages.full
