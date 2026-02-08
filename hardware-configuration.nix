@@ -25,6 +25,7 @@
   };
 
   hardware.graphics.enable32Bit = true;
+	hardware.flipperzero.enable = true;
 
   fileSystems."/" =
     {

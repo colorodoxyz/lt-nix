@@ -86,7 +86,7 @@
                     "format-muted" = "";
                     "format-bluetooth" = "{volume}% {icon} {format_source}";
                     "format-bluetooth-muted" = " {icon} {format_source}";
-                    "on-click" = "helvum";
+                    "on-click" = "pavucontrol";
                     "format-icons" = ["" "" ""];
                 };
             };

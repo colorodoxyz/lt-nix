@@ -53,11 +53,12 @@
     # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
     useDHCP = lib.mkDefault true;
     hostName = "wumbo";
-    wireless = {
-      enable = true;
-      networks = inputs.piss.networks;
-      userControlled.enable = true;
-    };
+			#  wireless = {
+			#    enable = true;
+			# #networks = inputs.piss.networks;
+			# #userControlled.enable = true;
+			#  };
+		networkmanager.enable = true;
     firewall.extraCommands = ''
       iptables -I INPUT -m pkttype --pkt-type multicast -j ACCEPT
       iptables -A INPUT -m pkttype --pkt-type multicast -j ACCEPT
@@ -79,7 +80,7 @@
     root.initialHashedPassword = inputs.piss.tanjoubi;
     gromit = {
       initialHashedPassword = inputs.piss.tanjoubi;
-      extraGroups = ["wheel" "docker"];
+      extraGroups = ["wheel" "docker" "networkmanager" "dialout"];
       isNormalUser = true;
       shell = pkgs.zsh;
     };
@@ -105,8 +106,8 @@
         la = "ls -lhA";
         flakeup = "nix flake lock --update-input";
         fixstore = "nix-store --repair --verify --check-contents";
-        nxrb = "sudo nixos-rebuild switch --flake /nix/persist/bonsai#wumbo";
-        snu = "sudo nix flake update";
+        nxrb = "nixos-rebuild switch --flake /nix/persist/bonsai#wumbo --sudo";
+				#snu = "sudo nix flake update";
         treetrim = "cd /nix/persist/bonsai/";
         workup = "cd /nix/persist/workspace/";
         tailup = "sudo tailscale up --accept-routes";

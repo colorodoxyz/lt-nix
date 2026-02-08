@@ -4,20 +4,29 @@
   inputs = {
     nixpkgs = {
 			url = "github:nixos/nixpkgs?ref=nixos-25.11";
-			#ref = "";
 		};
 
     nixpkgs-unstable = {
 			url = "github:nixos/nixpkgs?ref=nixos-unstable";
-			#ref = "nixos-unstable";
 		};
 
-    zig.url = "github:mitchellh/zig-overlay";
+    zig = {
+			url = "github:mitchellh/zig-overlay";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+			url = "github:nix-community/home-manager/release-25.11";
+     	inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-    impermanence.url = "github:nix-community/impermanence";
+    impermanence = {
+			url = "github:nix-community/impermanence"; 
+			inputs = {
+				nixpkgs.follows = "nixpkgs";
+				home-manager.follows = "home-manager";
+			};
+		};
 
     piss.url = "git+file:/nix/persist/bonsai/chumbawumba";
   };

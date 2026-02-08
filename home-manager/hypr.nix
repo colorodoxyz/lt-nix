@@ -28,9 +28,9 @@
         "workspace special:Spotify silent,class:^(spotify)$"
         "float,class:(clipse)"
         "size 622 652,class:(clipse)"
-        "float,class:(helvum)"
-        "size 500 500,class:(helvum)"
-        "move 100%-w-5 3%,class:(helvum)"
+        "float,class:(pavucontrol)"
+        "size 500 500,class:(pavucontrol)"
+        "move 100%-w-5 3%,class:(pavucontrol)"
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
       ];
       ecosystem.no_update_news = true;
@@ -51,7 +51,7 @@
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
 
-        layout = "dwindle";
+				#layout = "dwindle";
       };
 
       decoration = {
@@ -96,7 +96,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle = {
-        pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+				#pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # You probably want this
       };
 
@@ -135,9 +135,9 @@
           "${mainMod}, M, exit,"
 					#"${mainMod} SHIFT, R, hyprctl reload"
           "${mainMod}, V, togglefloating,"
-          "${mainMod}, P, pseudo, # dwindle"
-          "${mainMod}, I, togglesplit, # dwindle"
-          "${mainMod}, B, exec, firefox # dwindle"
+					#"${mainMod}, P, pseudo, # dwindle"
+					#"${mainMod}, I, togglesplit, # dwindle"
+					#"${mainMod}, B, exec, firefox # dwindle"
           "${mainMod}, D, exec, code --enable-features=UseOzonePlatform --ozone-platform=x11"
           "${mainMod}, H, movefocus, l"
           "${mainMod}, L, movefocus, r"
@@ -176,7 +176,7 @@
       bindr = [
         "${mainMod}, R, exec, pkill wofi || $menu"
         "${mainMod},SPACE, exec, pkill clipse || kitty --class clipse -e clipse"
-        "${mainMod},X, exec, pkill helvum || helvum"
+        "${mainMod},X, exec, pkill pavucontrol || pavucontrol"
       ];
       bindm = [
         "${mainMod}, mouse:272, movewindow"

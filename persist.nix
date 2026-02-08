@@ -23,6 +23,7 @@
         ".local/share/nvim"
 
         ".config/Code"
+				".config/obsidian"
         ".config/OrcaSlicer"
         ".config/kitty"
         ".config/nvim"
@@ -50,6 +51,7 @@
         "Documents"
         "Sync"
         "manual-connections"
+				"vault"
       ];
       files = [
         ".bash_history"

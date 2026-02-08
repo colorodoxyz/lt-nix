@@ -10,6 +10,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
+		zoom-us
+		freecad
+		deluge
     xwayland
     swaybg
     waybar
@@ -58,13 +61,14 @@
     tmate
     tailscale
     firefox
-    spotify-player
+    pkgs-unstable.spotify-player
     go
 
     rustc
     clippy
     cargo
-		helvum
+		#helvum
+		pavucontrol
 
     lxappearance
     steam
