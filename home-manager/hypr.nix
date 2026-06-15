@@ -21,17 +21,17 @@
 
       "windowrulev2" = [
         # "suppressevent maximize, class:.*"
-        "workspace special:Signal silent,class:^(signal)$"
-        "workspace special:Signal silent,class:^(Signal)$"
-        "workspace special:Discord silent,class:^(discord)$"
-        "workspace special:Discord silent,class:^(Discord)$"
-        "workspace special:Spotify silent,class:^(spotify)$"
-        "float,class:(clipse)"
-        "size 622 652,class:(clipse)"
-        "float,class:(pavucontrol)"
-        "size 500 500,class:(pavucontrol)"
-        "move 100%-w-5 3%,class:(pavucontrol)"
-        "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
+        # "workspace special:Signal silent,class:^(signal)$"
+        # "workspace special:Signal silent,class:^(Signal)$"
+        # "workspace special:Discord silent,class:^(discord)$"
+        # "workspace special:Discord silent,class:^(Discord)$"
+        # "workspace special:Spotify silent,class:^(spotify)$"
+        # "float,class:(clipse)"
+        # "size 622 652,class:(clipse)"
+        # "float,class:(pavucontrol)"
+        # "size 500 500,class:(pavucontrol)"
+        # "move 100%-w-5 3%,class:(pavucontrol)"
+        # "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
       ];
       ecosystem.no_update_news = true;
 

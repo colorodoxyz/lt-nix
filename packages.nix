@@ -93,9 +93,7 @@
     signal-desktop
     awscli2
     python3
-    python311Packages.pip
     poetry
-    neofetch
     unzip
   ];
 }

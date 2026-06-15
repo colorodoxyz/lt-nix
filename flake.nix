@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-			url = "github:nixos/nixpkgs?ref=nixos-25.11";
+			url = "github:nixos/nixpkgs?ref=nixos-26.05";
 		};
 
     nixpkgs-unstable = {
@@ -16,7 +16,7 @@
 		};
 
     home-manager = {
-			url = "github:nix-community/home-manager/release-25.11";
+			url = "github:nix-community/home-manager/release-26.05";
      	inputs.nixpkgs.follows = "nixpkgs";
 		};
 
@@ -53,15 +53,18 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.gromit = ({...}:{
-              imports = [
-                ./home-manager/home.nix
-                ./home-manager/hypr.nix
-                ./home-manager/waybar.nix
-              ];
-            });
+            home-manager = {
+							backupFileExtension = "hm-backup";
+							useGlobalPkgs = true;
+							useUserPackages = true;
+							users.gromit = ({...}:{
+								imports = [
+									./home-manager/home.nix
+									./home-manager/hypr.nix
+									./home-manager/waybar.nix
+								];
+							});
+					};	
             # import ./home.nix;
           }
           #(import ./overlays.nix)
