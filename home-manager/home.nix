@@ -143,8 +143,20 @@
       enableCompletion = true;
       autosuggestion.enable = true;
     };
+		jujutsu = {
+			enable = true;
+			settings = {
+				user = {
+					email = "jdoe@example.org";
+					name = "John Doe";
+				};
+			};
+		};
 
-    neovim.enable = true;
+    neovim = {
+			enable = true;
+			sideloadInitLua = true;
+		};
 
     zoxide = {
       enable = true;

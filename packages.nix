@@ -1,6 +1,9 @@
-{ zig, pkgs, pkgs-unstable, ... }:
 {
-
+  zig,
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
   fonts.packages = with pkgs; [
     fira-mono
     hack-font
@@ -10,35 +13,35 @@
   ];
 
   environment.systemPackages = with pkgs; [
-		zoom-us
-		freecad
-		deluge
+    zoom-us
+    freecad
+    deluge
     xwayland
     swaybg
     waybar
-		exfat
-		mesa-demos
-		filezilla
+    exfat
+    mesa-demos
+    filezilla
     brightnessctl
     hypridle
     hyprshot
     wpa_supplicant_gui
     zig.packages."x86_64-linux".master
     wofi
-		gparted
+    gparted
     gtk3
-		kdePackages.dolphin
-    chromium
+    kdePackages.dolphin
+    pkgs-unstable.chromium
     vulkan-tools
     mako
-		pkgs-unstable.orca-slicer
+    pkgs-unstable.orca-slicer
     wl-clipboard
     wl-clip-persist
     clipse
     blueman
     wev
-		nix-tree
-		nil
+    nix-tree
+    nil
     halloy
     wineWow64Packages.full
     unrar
@@ -60,31 +63,29 @@
     libreoffice
     tmate
     tailscale
-    firefox
+    pkgs-unstable.firefox
     pkgs-unstable.spotify-player
     go
 
     rustc
     clippy
     cargo
-		#helvum
-		pavucontrol
+    #helvum
+    pavucontrol
 
     lxappearance
     steam
     gcc
     gdb
     wireguard-tools
-    neovim
     os-prober
     wget
     gitFull
-		jujutsu
-		obsidian
+    obsidian
     ripgrep
     lsof
     paprefs
-    discord
+    pkgs-unstable.discord
     vlc
     efibootmgr
     gnumake
