@@ -101,7 +101,16 @@
       };
     };
 
-    bemenu.enable = true;
+    fuzzel = {
+      enable = true;
+      settings = {
+        main = {
+          layer = "overlay";
+          terminal = "${pkgs.kitty}/bin/kitty";
+        };
+        colors.background = "2c2c2c";
+      };
+    };
 
     firefox.enable = true;
 
@@ -129,13 +138,17 @@
       };
     };
 
-    fzf.enable = true; # enables zsh integration by default
+    fzf.enable = true;
     starship.enable = true;
 
     zsh = {
       enable = true;
       enableCompletion = true;
       autosuggestion.enable = true;
+      oh-my-zsh = {
+        enable = true;
+        plugins = ["jj" "rust" "git" "git-lfs" "fzf"];
+      };
     };
     jujutsu = {
       enable = true;
@@ -156,11 +169,6 @@
     neovim = {
       enable = true;
       sideloadInitLua = true;
-    };
-
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
     };
   };
 

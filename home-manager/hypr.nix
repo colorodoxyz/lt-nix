@@ -4,7 +4,7 @@
     settings = let
       mainMod = "SUPER";
     in {
-      "$menu" = "bemenu-run";
+      "$menu" = "fuzzel";
       monitor = ",highres,auto,1";
       xwayland = {
         force_zero_scaling = true;
@@ -51,7 +51,7 @@
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
 
-				#layout = "dwindle";
+        #layout = "dwindle";
       };
 
       decoration = {
@@ -96,7 +96,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle = {
-				#pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+        #pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
         preserve_split = true; # You probably want this
       };
 
@@ -123,7 +123,7 @@
 
         touchpad = {
           natural_scroll = true;
-					drag_3fg=1;
+          drag_3fg = 1;
         };
       };
 
@@ -133,11 +133,11 @@
           "${mainMod}, Q, exec, KITTY_ENABLE_WAYLAND=1 kitty"
           "${mainMod}, C, killactive,"
           "${mainMod}, M, exit,"
-					#"${mainMod} SHIFT, R, hyprctl reload"
+          #"${mainMod} SHIFT, R, hyprctl reload"
           "${mainMod}, V, togglefloating,"
-					#"${mainMod}, P, pseudo, # dwindle"
-					#"${mainMod}, I, togglesplit, # dwindle"
-					#"${mainMod}, B, exec, firefox # dwindle"
+          #"${mainMod}, P, pseudo, # dwindle"
+          #"${mainMod}, I, togglesplit, # dwindle"
+          #"${mainMod}, B, exec, firefox # dwindle"
           "${mainMod}, D, exec, code --enable-features=UseOzonePlatform --ozone-platform=x11"
           "${mainMod}, H, movefocus, l"
           "${mainMod}, L, movefocus, r"
@@ -153,9 +153,9 @@
           "${mainMod}, PRINT, exec, hyprshot -m window"
           ", PRINT, exec, hyprshot -m output"
           "${mainMod} SHIFT, PRINT, exec, hyprshot -m region"
-					",XF86AudioMicMute,exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-					",XF86AudioMute,exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-					#67 mute speakers 68 minus, 69 plus, 70 mute mic
+          ",XF86AudioMicMute,exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+          ",XF86AudioMute,exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          #67 mute speakers 68 minus, 69 plus, 70 mute mic
         ]
         ++ (
           # workspaces
@@ -183,7 +183,6 @@
         "${mainMod}, mouse:273, resizewindow"
       ];
       binde = [
-
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%+"
         ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"

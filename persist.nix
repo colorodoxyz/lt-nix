@@ -6,7 +6,7 @@
       "/var/lib/systemd/coredump"
       "/var/lib/bluetooth"
       "/var/lib/tailscale"
-			"/var/lib/nixos"
+      "/var/lib/nixos"
       "/etc/NetworkManager/system-connections"
     ];
     files = [
@@ -18,12 +18,11 @@
     users.gromit = {
       directories = [
         ".local/share/sddm"
-        ".local/share/zoxide"
         ".local/share/Steam"
         ".local/share/nvim"
 
         ".config/Code"
-				".config/obsidian"
+        ".config/obsidian"
         ".config/OrcaSlicer"
         ".config/kitty"
         ".config/nvim"
@@ -51,7 +50,7 @@
         "Documents"
         "Sync"
         "manual-connections"
-				"vault"
+        "vault"
       ];
       files = [
         ".bash_history"
