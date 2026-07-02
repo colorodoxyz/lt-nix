@@ -14,6 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     zoom-us
+    gnupg
     freecad
     deluge
     xwayland

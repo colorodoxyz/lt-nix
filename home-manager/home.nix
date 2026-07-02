@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home = {
     username = "gromit";
     homeDirectory = "/home/gromit";
@@ -9,9 +9,9 @@
       ripgrep
     ];
     file.".ssh/allowed_signers".text = ''
-    spencer.liu.liu@gmail.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYOC0HTedqrgULQ7WOhqwQ7OCapQk+q4ZLOE4knjSkW
+      spencer.liu.liu@gmail.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYOC0HTedqrgULQ7WOhqwQ7OCapQk+q4ZLOE4knjSkW
     '';
-    sessionPath = [ "~/.cargo/bin" ];
+    sessionPath = ["~/.cargo/bin"];
   };
 
   services = {
@@ -115,24 +115,18 @@
       enable = true;
       lfs.enable = true;
 
-			settings = {
-				user = {
-					name = "Spencer Liu";
-					email = "spencer.liu.liu@gmail.com";
-					signingkey = "/home/gromit/.ssh/gh_sign.pub";
-				};
+      settings = {
+        user = {
+          name = "Spencer Liu";
+          email = "spencer.liu.liu@gmail.com";
+          signingkey = "/home/gromit/.ssh/gh_sign.pub";
+        };
         gpg = {
           format = "ssh";
           ssh.allowedSignersFile = "~/.ssh/allowed_signers";
         };
         commit.gpgsign = true;
-			};
-			/*
-      extraConfig = {
-        #url."git@github.com:".insteadOf = "https://github.com/";
-        #url."git@gogs.tail43567.ts.net".insteadOf = "http://gogs.tail43567.ts.net";
       };
-			*/
     };
 
     fzf.enable = true; # enables zsh integration by default
@@ -143,20 +137,26 @@
       enableCompletion = true;
       autosuggestion.enable = true;
     };
-		jujutsu = {
-			enable = true;
-			settings = {
-				user = {
-					email = "jdoe@example.org";
-					name = "John Doe";
-				};
-			};
-		};
+    jujutsu = {
+      enable = true;
+      settings = {
+        user = {
+          email = "spencer.liu.liu@gmail.com";
+          name = "Spencer Liu";
+        };
+        signing = {
+          behavior = "own";
+          backend = "ssh";
+          key = "/home/gromit/.ssh/gh_sign.pub";
+          backends.ssh.allowed-signers = "/home/gromit/.ssh/allowed_signers";
+        };
+      };
+    };
 
     neovim = {
-			enable = true;
-			sideloadInitLua = true;
-		};
+      enable = true;
+      sideloadInitLua = true;
+    };
 
     zoxide = {
       enable = true;
@@ -168,12 +168,11 @@
   systemd.user.startServices = "sd-switch";
 
   services.mako = {
-      enable = true;
-		settings = {
+    enable = true;
+    settings = {
       default-timeout = 5000;
-		};
+    };
   };
-
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";
