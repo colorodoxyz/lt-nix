@@ -53,12 +53,12 @@
     # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
     useDHCP = lib.mkDefault true;
     hostName = "wumbo";
-			#  wireless = {
-			#    enable = true;
-			# #networks = inputs.piss.networks;
-			# #userControlled.enable = true;
-			#  };
-		networkmanager.enable = true;
+    #  wireless = {
+    #    enable = true;
+    # #networks = inputs.piss.networks;
+    # #userControlled.enable = true;
+    #  };
+    networkmanager.enable = true;
     firewall.extraCommands = ''
       iptables -I INPUT -m pkttype --pkt-type multicast -j ACCEPT
       iptables -A INPUT -m pkttype --pkt-type multicast -j ACCEPT
@@ -98,7 +98,7 @@
         gl = "git pull";
         gu = "git push";
         ga = "git add";
-				gst = "git stage";
+        gst = "git stage";
         gcl = "git clone";
         gw = "git worktree";
         nv = "nvim";
@@ -107,7 +107,7 @@
         flakeup = "nix flake lock --update-input";
         fixstore = "nix-store --repair --verify --check-contents";
         nxrb = "nixos-rebuild switch --flake /nix/persist/bonsai#wumbo --sudo";
-				#snu = "sudo nix flake update";
+        #snu = "sudo nix flake update";
         treetrim = "cd /nix/persist/bonsai/";
         workup = "cd /nix/persist/workspace/";
         tailup = "sudo tailscale up --accept-routes";
@@ -119,6 +119,10 @@
 
   # Enables copy / paste when running in a KVM with spice.
   services = {
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
     tailscale.enable = true;
     spice-vdagentd.enable = true;
 
@@ -129,17 +133,16 @@
       configDir = "/home/gromit/.config/syncthing";
     };
 
-		avahi = {
-			enable = true;
-			nssmdns4 = true;
-			openFirewall = true;
-		};
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
 
-
-		printing = {
-			enable = true;
-  		drivers = [ pkgs.brlaser ];
-		};
+    printing = {
+      enable = true;
+      drivers = [pkgs.brlaser];
+    };
 
     xserver = {
       enable = true;

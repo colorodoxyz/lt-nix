@@ -17,7 +17,6 @@
     ];
     users.gromit = {
       directories = [
-        ".local/share/sddm"
         ".local/share/Steam"
         ".local/share/nvim"
 
