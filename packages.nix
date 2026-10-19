@@ -13,7 +13,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    appimage-run
+    lftp
     zoom-us
     gnupg
     freecad
