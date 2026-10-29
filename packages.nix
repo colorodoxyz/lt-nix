@@ -13,7 +13,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
+		claude-code
     lftp
+		lua
+		luarocks
     zoom-us
     gnupg
     freecad
@@ -63,7 +66,6 @@
     nodejs
     gotop
     libreoffice
-    tmate
     tailscale
     pkgs-unstable.firefox
     pkgs-unstable.spotify-player

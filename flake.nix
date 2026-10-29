@@ -19,6 +19,11 @@
 			url = "github:nix-community/home-manager/release-26.05";
      	inputs.nixpkgs.follows = "nixpkgs";
 		};
+		cc = {
+      url = "github:ryoppippi/nix-claude-code";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
 
     impermanence = {
 			url = "github:nix-community/impermanence"; 
@@ -31,7 +36,7 @@
     piss.url = "git+file:/nix/persist/bonsai/chumbawumba";
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, zig, impermanence, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, nixpkgs-unstable, zig, impermanence, home-manager, cc, ... }: {
     nixosConfigurations = {
       wumbo = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -60,13 +65,14 @@
 							users.gromit = ({...}:{
 								imports = [
 									./home-manager/home.nix
-									./home-manager/hypr.nix
 									./home-manager/waybar.nix
 								];
 							});
 					};	
             # import ./home.nix;
           }
+					(import ./overlays.nix {inherit cc;})
+
           #(import ./overlays.nix)
         ];
       };

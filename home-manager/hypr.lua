@@ -60,26 +60,10 @@ hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output"))
 hl.bind("SUPER + SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
-hl.bind("SUPER + 1", hl.dsp.focus({ workspace = 1 }))
-hl.bind("SUPER + SHIFT + 1", hl.dsp.window.move({ workspace = 1 }))
-hl.bind("SUPER + 2", hl.dsp.focus({ workspace = 2 }))
-hl.bind("SUPER + SHIFT + 2", hl.dsp.window.move({ workspace = 2 }))
-hl.bind("SUPER + 3", hl.dsp.focus({ workspace = 3 }))
-hl.bind("SUPER + SHIFT + 3", hl.dsp.window.move({ workspace = 3 }))
-hl.bind("SUPER + 4", hl.dsp.focus({ workspace = 4 }))
-hl.bind("SUPER + SHIFT + 4", hl.dsp.window.move({ workspace = 4 }))
-hl.bind("SUPER + 5", hl.dsp.focus({ workspace = 5 }))
-hl.bind("SUPER + SHIFT + 5", hl.dsp.window.move({ workspace = 5 }))
-hl.bind("SUPER + 6", hl.dsp.focus({ workspace = 6 }))
-hl.bind("SUPER + SHIFT + 6", hl.dsp.window.move({ workspace = 6 }))
-hl.bind("SUPER + 7", hl.dsp.focus({ workspace = 7 }))
-hl.bind("SUPER + SHIFT + 7", hl.dsp.window.move({ workspace = 7 }))
-hl.bind("SUPER + 8", hl.dsp.focus({ workspace = 8 }))
-hl.bind("SUPER + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
-hl.bind("SUPER + 9", hl.dsp.focus({ workspace = 9 }))
-hl.bind("SUPER + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
-hl.bind("SUPER + 0", hl.dsp.focus({ workspace = 10 }))
-hl.bind("SUPER + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
+for i = 1, 10 do
+    hl.bind("SUPER + " .. i % 10, hl.dsp.focus({ workspace = i }))
+    hl.bind("SUPER + SHIFT + " .. i % 10, hl.dsp.window.move({ workspace = i }))
+end
 
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_SINK@ 5%-"), { repeating = true })
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_SINK@ 5%+"), { repeating = true })
@@ -110,7 +94,7 @@ hl.monitor({
 
 hl.config({
     animations = {
-        enabled = true,
+        enabled = false,
     },
     binds = {
         pass_mouse_when_bound = true,
@@ -156,7 +140,7 @@ hl.config({
         new_status = "master",
     },
     misc = {
-        disable_hyprland_logo = false,
+        disable_hyprland_logo = true,
         force_default_wallpaper = 2,
     },
     xwayland = {
@@ -165,7 +149,6 @@ hl.config({
 })
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("/nix/store/165rncxlyi4f9pjf1zk3hmj3mh2v881w-dbus-1.16.2/bin/dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target")
     hl.exec_cmd("clipse -listen")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("swaybg -i /nix/persist/bonsai/home-manager/dbbg.png")
@@ -174,5 +157,3 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("discord --enable-features=UseOzonePlatform --ozone-platform=x11")
     hl.exec_cmd("kitty --class spotify spotify_player")
 end)
-
-

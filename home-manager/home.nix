@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = false;
+    configType = "lua";
+    extraConfig = builtins.readFile ./hypr.lua;
+  };
   home = {
     username = "gromit";
     homeDirectory = "/home/gromit";
