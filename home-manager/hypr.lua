@@ -148,6 +148,10 @@ hl.config({
     },
 })
 
+hl.window_rule({ match = { class = "^[Ss]ignal$" }, workspace = "special:Signal silent" })
+hl.window_rule({ match = { class = "^[Dd]iscord$" }, workspace = "special:Discord silent" })
+hl.window_rule({ match = { class = "^spotify$" }, workspace = "special:Spotify silent" })
+
 hl.on("hyprland.start", function()
     hl.exec_cmd("clipse -listen")
     hl.exec_cmd("hypridle")
