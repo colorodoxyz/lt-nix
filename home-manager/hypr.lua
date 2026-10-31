@@ -38,7 +38,7 @@ hl.animation({
     bezier = "default",
 })
 
-hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = 2, action = "toggle" }))
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("KITTY_ENABLE_WAYLAND=1 kitty"))
 hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + M", hl.dsp.exit())

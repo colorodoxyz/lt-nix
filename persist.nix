@@ -20,6 +20,8 @@
         ".local/share/Steam"
         ".local/share/nvim"
 
+        ".claude"
+
         ".config/Code"
         ".config/obsidian"
         ".config/OrcaSlicer"
@@ -33,12 +35,12 @@
         ".config/spotify-player"
         ".config/syncthing"
         ".config/keepassxc"
+        ".config/.mozilla"
+
         ".cache/spotify-player"
         ".cache/keepassxc"
         ".cache/nvim"
         ".cache/orca-slicer"
-
-        ".mozilla"
 
         ".ssh"
         "go"
@@ -52,6 +54,7 @@
         "vault"
       ];
       files = [
+        ".claude.json"
         ".bash_history"
         ".config/systemsettingsrc"
         ".zsh_history"

@@ -114,15 +114,22 @@
         piaUp = "sudo PIA_USER=$PIA_USER PIA_PASS=$PIA_PASS ~/manual-connections/run_setup.sh";
       };
     };
-    hyprland.enable = true;
+		hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    };
+
   };
 
   # Enables copy / paste when running in a KVM with spice.
   services = {
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
+		displayManager = {
+      gdm.enable = true;
+      defaultSession = "hyprland";
     };
+
     tailscale.enable = true;
     spice-vdagentd.enable = true;
 

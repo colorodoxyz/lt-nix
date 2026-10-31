@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   wayland.windowManager.hyprland = {
     enable = true;
     systemd.enable = false;
@@ -118,7 +122,10 @@
       };
     };
 
-    firefox.enable = true;
+    firefox = {
+      enable = true;
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
+    };
 
     kitty = {
       enable = true;
@@ -174,6 +181,8 @@
 
     neovim = {
       enable = true;
+      withRuby = false;
+      withPython3 = false;
       sideloadInitLua = true;
     };
   };
