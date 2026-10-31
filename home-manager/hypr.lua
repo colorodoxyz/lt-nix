@@ -82,6 +82,7 @@ hl.bind("SUPER + mouse:272", hl.dsp.window.drag())
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize())
 
 hl.bind("SUPER + R", hl.dsp.exec_cmd("pkill wofi || " .. menu), { release = true })
+hl.bind("SUPER + B", hl.dsp.exec_cmd("firefox"), { release = true })
 hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("pkill clipse || kitty --class clipse -e clipse"), { release = true })
 hl.bind("SUPER + X", hl.dsp.exec_cmd("pkill pavucontrol || pavucontrol"), { release = true })
 
