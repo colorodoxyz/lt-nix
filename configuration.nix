@@ -40,6 +40,7 @@
       config.nix.registry;
   };
 
+  nix.gc.automatic = true;
   nix.settings = {
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
@@ -114,18 +115,17 @@
         piaUp = "sudo PIA_USER=$PIA_USER PIA_PASS=$PIA_PASS ~/manual-connections/run_setup.sh";
       };
     };
-		hyprland = {
+    hyprland = {
       enable = true;
       withUWSM = true;
       xwayland.enable = true;
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
-
   };
 
   # Enables copy / paste when running in a KVM with spice.
   services = {
-		displayManager = {
+    displayManager = {
       gdm.enable = true;
       defaultSession = "hyprland";
     };
