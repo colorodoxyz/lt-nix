@@ -1,10 +1,12 @@
 {
   cc,
+  rustlings-nix,
   pkgs-unstable,
   ...
 }: {
   nixpkgs.overlays = [
     cc.overlays.default
+    rustlings-nix.overlays.default
     (final: prev: {
       spotify-player = pkgs-unstable.spotify-player.overrideAttrs {
         version = "0.25.1-unstable-157e6a8";

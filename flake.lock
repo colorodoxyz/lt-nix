@@ -152,11 +152,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1793776235,
-        "narHash": "sha256-uYEBy9SGDsOI3aiith0+TQPBJ+k6I4nIshiCD4QwVUQ=",
+        "lastModified": 1793778106,
+        "narHash": "sha256-oJde4dqKTcKVNi6nVKOYW5vq5ANyrKq8gCTXlG3dNt8=",
         "owner": "colorodoxyz",
         "repo": "rustlings-nix-flake",
-        "rev": "2a1352fb2858815074a219009185a9129b27f35e",
+        "rev": "410d0aa26dbfe96f258f002e8db9717c31fd5f34",
         "type": "github"
       },
       "original": {

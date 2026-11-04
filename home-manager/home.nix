@@ -154,6 +154,11 @@
     fzf.enable = true;
     starship.enable = true;
 
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+
     zsh = {
       enable = true;
       enableCompletion = true;

@@ -1,8 +1,6 @@
 {
   pkgs,
   pkgs-unstable,
-  system,
-  rustlings-nix,
   ...
 }: {
   fonts.packages = with pkgs; [
@@ -14,7 +12,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    rustlings-nix.packages.${system}.default
+    rustlings
     claude-code
     lftp
     lua

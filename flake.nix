@@ -49,7 +49,7 @@
         system = "x86_64-linux";
 
         specialArgs = {
-          inherit inputs system rustlings-nix;
+          inherit inputs system;
 
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
@@ -76,7 +76,7 @@
             # import ./home.nix;
           }
           (import ./overlays.nix {
-            inherit cc;
+            inherit cc rustlings-nix;
             inherit (specialArgs) pkgs-unstable;
           })
         ];
