@@ -68,7 +68,7 @@
     libreoffice
     tailscale
     pkgs-unstable.firefox
-    pkgs-unstable.spotify-player
+    spotify-player
     go
 
     rustc

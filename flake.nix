@@ -3,40 +3,47 @@
 
   inputs = {
     nixpkgs = {
-			url = "github:nixos/nixpkgs?ref=nixos-26.05";
-		};
+      url = "github:nixos/nixpkgs?ref=nixos-26.05";
+    };
 
     nixpkgs-unstable = {
-			url = "github:nixos/nixpkgs?ref=nixos-unstable";
-		};
+      url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    };
 
     zig = {
-			url = "github:mitchellh/zig-overlay";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
+      url = "github:mitchellh/zig-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
-			url = "github:nix-community/home-manager/release-26.05";
-     	inputs.nixpkgs.follows = "nixpkgs";
-		};
-		cc = {
+      url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    cc = {
       url = "github:ryoppippi/nix-claude-code";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     impermanence = {
-			url = "github:nix-community/impermanence"; 
-			inputs = {
-				nixpkgs.follows = "nixpkgs";
-				home-manager.follows = "home-manager";
-			};
-		};
+      url = "github:nix-community/impermanence";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
 
     piss.url = "git+file:/nix/persist/bonsai/chumbawumba";
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs-unstable, zig, impermanence, home-manager, cc, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    nixpkgs-unstable,
+    zig,
+    impermanence,
+    home-manager,
+    cc,
+    ...
+  }: {
     nixosConfigurations = {
       wumbo = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
@@ -59,21 +66,22 @@
           home-manager.nixosModules.home-manager
           {
             home-manager = {
-							backupFileExtension = "hm-backup";
-							useGlobalPkgs = true;
-							useUserPackages = true;
-							users.gromit = ({...}:{
-								imports = [
-									./home-manager/home.nix
-									./home-manager/waybar.nix
-								];
-							});
-					};	
+              backupFileExtension = "hm-backup";
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.gromit = {...}: {
+                imports = [
+                  ./home-manager/home.nix
+                  ./home-manager/waybar.nix
+                ];
+              };
+            };
             # import ./home.nix;
           }
-					(import ./overlays.nix {inherit cc;})
-
-          #(import ./overlays.nix)
+          (import ./overlays.nix {
+            inherit cc;
+            inherit (specialArgs) pkgs-unstable;
+          })
         ];
       };
     };
