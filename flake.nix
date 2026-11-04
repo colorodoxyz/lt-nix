@@ -10,9 +10,9 @@
       url = "github:nixos/nixpkgs?ref=nixos-unstable";
     };
 
-    zig = {
-      url = "github:mitchellh/zig-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+    rustlings-nix = {
+      url = "github:colorodoxyz/rustlings-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     home-manager = {
@@ -38,7 +38,7 @@
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-unstable,
-    zig,
+    rustlings-nix,
     impermanence,
     home-manager,
     cc,
@@ -48,12 +48,9 @@
       wumbo = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
 
-        # Pass inputs into the NixOS module system
         specialArgs = {
-          inherit inputs;
-          inherit system;
-          inherit zig;
-          #impHPkg = impermanence.nixosModules.home-manager.impermanence;
+          inherit inputs system rustlings-nix;
+
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;

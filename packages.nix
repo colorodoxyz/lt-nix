@@ -1,7 +1,8 @@
 {
-  zig,
   pkgs,
   pkgs-unstable,
+  system,
+  rustlings-nix,
   ...
 }: {
   fonts.packages = with pkgs; [
@@ -13,10 +14,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
-		claude-code
+    rustlings-nix.packages.${system}.default
+    claude-code
     lftp
-		lua
-		luarocks
+    lua
+    luarocks
     zoom-us
     gnupg
     freecad
@@ -31,7 +33,6 @@
     hypridle
     hyprshot
     wpa_supplicant_gui
-    zig.packages."x86_64-linux".master
     wofi
     gparted
     gtk3
